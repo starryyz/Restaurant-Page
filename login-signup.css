@@ -7,7 +7,7 @@
 }
 
 .login-signup-container{
-    position: right;
+    position: right ;
     width: 100%;
     min-height: 100vh;
     background-image: url("Images/bg-login7.png");
@@ -15,7 +15,7 @@
     background-position: center;
     background-size: cover;
     overflow: hidden;
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end; 
     align-items: center;       
     padding-right: 50px;    
@@ -127,7 +127,6 @@ input:hover{
   width: 400px;
   text-align: center;
 }
-
 .footer {
     width: 100%;
     text-align: center;

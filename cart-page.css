@@ -1,0 +1,29 @@
+        *{
+            cursor: url("Images/2.png"), auto;
+        }
+        
+        .menu-bar{
+            height: 50px;
+            width: 100%;
+            background-color: #969697;
+        }
+        .container {
+            background-image: url(/_.jpeg);
+            background-size: cover;
+            background-color: #ceceea;
+            height: 900px;
+            width: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            display: flex;
+            background-color: hsl(240, 5%, 96%);
+            width: 500px;
+            height: 800px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
