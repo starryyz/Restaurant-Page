@@ -1,5 +1,4 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -18,18 +17,24 @@
     display: flex;
     justify-content: flex-end; 
     align-items: center;       
-    padding-right: 50px;    
+    padding-right: 50px;  
+    font-family: 'Courier New', Courier, monospace;  
 
+}
+h2{
+    font-family:  "Shadows Into Light";
 }
 
 input{
     outline: none;
     resize: none;
+    font-family: 'Courier New', Courier, monospace;
     
 }
 
 .login-btn{
     margin-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .login-btn:hover{
     cursor: url("Images/1.png"), pointer;
@@ -39,6 +44,7 @@ input{
     font-size: 40px;
     color: #FFFFFF;
     margin-bottom: 12px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .login1-1 input {
@@ -49,6 +55,7 @@ input{
   border: 1px solid #F7E4AE;
   box-sizing: border-box;
   margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
 }
 input:hover{
     cursor: url("Images/1.png"), pointer;
@@ -64,6 +71,7 @@ input:hover{
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .login-btn:hover {
@@ -77,6 +85,7 @@ input:hover{
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .remember {
@@ -85,12 +94,14 @@ input:hover{
   gap: 5px;
   font-size: 0.9rem;
   color: #FFFFFF;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .new-to {
   margin-top: 10px;
   text-align: center;
   color: #FFFFFF;
+  font-family: 'Courier New', Courier, monospace;
   
 }
 
@@ -104,6 +115,7 @@ input:hover{
   transition: 0.3s ease;
   font-size: 1rem;
   margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .signup-link:hover {
@@ -126,6 +138,7 @@ input:hover{
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   width: 400px;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .footer {
@@ -138,6 +151,7 @@ input:hover{
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%); 
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #signupcontainer{
