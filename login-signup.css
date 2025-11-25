@@ -1,0 +1,122 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login-signup-container{
+    position: right;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("/Images/bg-login7.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;       
+    padding-right: 50px;    
+
+}
+
+input{
+    outline: none;
+    resize: none;
+    
+}
+
+.login-btn{
+    margin-top: 5px;
+}
+
+.login1{
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.login1-1 input {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #F7E4AE;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.login-btn {
+  width: 320px ;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #D892C8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #F5C4E6;
+  color: #2b2438;
+}
+
+.remember-signup {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+
+.new-to {
+  margin-top: 10px;
+  text-align: center;
+  color: #FFFFFF;
+  
+}
+
+.signup-link {
+  background-color: #D892C8;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.signup-link:hover {
+  background-color: #F5C4E6;
+  color:#2b2438;
+}
+
+/* .login-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+} */
+
+.forms {
+  background-color: #d1b0c5; 
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  height: 410px;
+  text-align: center;
+}
