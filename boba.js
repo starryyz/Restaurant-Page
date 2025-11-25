@@ -26,12 +26,12 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
 
 
 function goToSignup() {
-  window.location.href = "signup.html";
+  window.location.href = "login-signup.html";
 }
 
 
 function goToLogin() {
-  window.location.href = "login.html";
+  window.location.href = "login-signup.html";
 }
 function goToSignup() {
     document.getElementById("logincontainer").style.display = "none";
