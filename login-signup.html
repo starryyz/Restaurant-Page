@@ -7,7 +7,7 @@
     <link href="login-signup.css" rel="stylesheet">
 </head>
 <body>
-     <div class="login-signup-container">
+     <div class="login-signup-container" id="logincontainer">
         <div class="forms">
             <div class="login-signup">
                 <form action="" class="login-form">
@@ -33,6 +33,36 @@
             </div>
         </div>
     </div>
+    <div class="login-signup-container" id="signupcontainer">
+        <div class="forms">
+            <div class="login-signup">
+                <form action="" class="login-form" id="signupForm">
+                <h2 class="login1">Sign Up</h2>
+                    <div class="login1-1">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="login1-1">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="login1-1">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <label class="remember">
+                        <input type="checkbox" id="rememberMe"> Remember Me
+                    </label>
+                    <input type="submit" value="Sign Up" class="login-btn">
+
+                    <div class="new-to">
+                    <p>Already have an account?</p>
+                    <button type="button" class="signup-link" onclick="goToLogin()">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <strong> © 2025 SCB Properties, In. All rights reserved.</strong>
+    </footer>
 <script src="boba.js"></script>
 </body>
 </html>

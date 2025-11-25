@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: url("Images/2.png"), auto;
 }
 
 .login-signup-container{
@@ -30,6 +31,9 @@ input{
 .login-btn{
     margin-top: 5px;
 }
+.login-btn:hover{
+    cursor: url("Images/1.png"), pointer;
+}
 
 .login1{
     font-size: 40px;
@@ -45,6 +49,9 @@ input{
   border: 1px solid #F7E4AE;
   box-sizing: border-box;
   margin-bottom: 10px;
+}
+input:hover{
+    cursor: url("Images/1.png"), pointer;
 }
 
 .login-btn {
@@ -102,6 +109,7 @@ input{
 .signup-link:hover {
   background-color: #F5C4E6;
   color:#2b2438;
+  cursor: url("Images/1.png"), pointer;
 }
 
 /* .login-signup-container {
@@ -117,6 +125,21 @@ input{
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   width: 400px;
-  height: 410px;
   text-align: center;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    color: #471656; 
+    font-size: 0.9rem;
+    padding: 15px 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+#signupcontainer{
+    display: none;
 }
