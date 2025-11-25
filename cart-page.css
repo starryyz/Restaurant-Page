@@ -8,7 +8,7 @@
             background-color: #969697;
         }
         .container {
-            background-image: url(/_.jpeg);
+            /* background-image: url(/_.jpeg); */
             background-size: cover;
             background-color: #ceceea;
             height: 900px;
