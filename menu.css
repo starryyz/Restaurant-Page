@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: ;
+    background: #faf6f0;
+    color: black;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #7565A5;
+    color: BLACK;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+.menu-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-section h2 {
+    border-bottom: 2px solid #B0A0C4;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: black;
+}
+
+.menu-item {
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    margin: 0;
+    color: black;
+}
+
+.menu-item .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.menu-item p {
+    width: 100%;
+    margin: 4px 0 0;
+    font-size: 15px;
+    color: black;
+}
