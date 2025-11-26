@@ -65,7 +65,7 @@ input:hover{
   width: 320px ;
   padding: 15px;
   font-size: 1.2rem;
-  background-color: #c2aadc;
+  background-color: #A79FE3;
   color: white;
   border: none;
   border-radius: 10px;
@@ -74,7 +74,7 @@ input:hover{
 }
 
 .login-btn:hover {
-  background-color: #F5C4E6;
+  background-color: #E5A9F1;
   color: #2b2438;
 }
 
@@ -101,7 +101,7 @@ input:hover{
 }
 
 .signup-link {
-  background-color: #b492d8;
+  background-color: #A79FE3;
   color: #FFFFFF;
   border: none;
   padding: 10px 20px;
@@ -113,7 +113,7 @@ input:hover{
 }
 
 .signup-link:hover {
-  background-color: #F5C4E6;
+  background-color: #E5A9F1;
   color:#2b2438;
   cursor: url("Images/1.png"), pointer;
 }
@@ -126,7 +126,7 @@ input:hover{
 } */
 
 .forms {
-  background-color: #765e94; 
+  background-color: #471656; 
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
