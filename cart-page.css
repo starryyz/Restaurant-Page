@@ -1,29 +1,112 @@
-        *{
-            cursor: url("Images/2.png"), auto;
-        }
-        
-        .menu-bar{
-            height: 50px;
-            width: 100%;
-            background-color: #969697;
-        }
-        .container {
-            /* background-image: url(/_.jpeg); */
-            background-size: cover;
-            background-color: #ceceea;
-            height: 900px;
-            width: 100%;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .content {
-            display: flex;
-            background-color: hsl(240, 5%, 96%);
-            width: 500px;
-            height: 800px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-        }
+
+* {
+    cursor: url("Images/2.png"), auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 100%;
+}
+
+/* ---- Top Menu ---- */
+.menu {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.menu p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+}
+
+.menu-bar {
+    height: 80px;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-bar h3 {
+    font-size: 28px;
+    color: #6a6a6a;
+}
+
+/* ---- Main Two-Column Section ---- */
+.container-two {
+    background-image: url("/Restaurant-Page/Images/bg-login7.png");
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.content,
+.content-two {
+    background-color: #f0f0f4;
+    border-radius: 15px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.content {
+    width: 300px;
+    height: 500px;
+}
+
+.content-two {
+    width: 500px;
+    height: 500px;
+}
+
+/* ---- Footer ---- */
+.footer,
+.footer-two {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0 5px 0;
+}
+
+.footer p,
+.footer-two p {
+    color: #666;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.footer p:hover,
+.footer-two p:hover {
+    color: #000;
+}
+
+.copyright {
+    text-align: center;
+    color: #808080;
+    padding: 10px;
+}
