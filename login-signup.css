@@ -126,12 +126,13 @@ input:hover{
 } */
 
 .forms {
-  background-color: #471656; 
+  background-color: #47165640; 
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   width: 400px;
   text-align: center;
+  /* border: 1px solid #471656; */
 }
 .footer {
     width: 100%;
