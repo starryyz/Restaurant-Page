@@ -19,6 +19,7 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
   let password = document.querySelector('#logincontainer input[type="password"]').value;
   let rememberCheckbox = document.getElementById('rememberMe');
 
+  //remember me box
  
   if (rememberCheckbox && rememberCheckbox.checked) {
     localStorage.setItem('savedUsername', username);
@@ -26,6 +27,7 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
     localStorage.removeItem('savedUsername');
   }
 
+  //admin login
  
   if (username === adminUser && password === adminPass) {
     localStorage.setItem("loggedInUser", username);
@@ -35,7 +37,7 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
   }
 });
 
-
+//automatically shows the login/sign up page first
 if (!localStorage.getItem("loggedInUser") &&
     !window.location.pathname.includes("login-signup.html")) {
   window.location.href = "login-signup.html";
