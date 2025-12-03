@@ -1,8 +1,8 @@
+  
     * {
     overflow-x: hidden;
     cursor: url("Images/2.png"), auto; 
     }
-
 
     .flexbox-container {
     display:flex;
@@ -14,7 +14,6 @@
     .banner {
     background-image: url(Images/banner.png);
     background-size: 100% auto;
-      image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
@@ -28,6 +27,106 @@
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
+    }
+
+    .attachedHeader-nav {
+      background-image: url(Images/attachedBanner.png);
+      background-size: 100% auto;
+      image-rendering: -webkit-optimize-contrast;
+       top:0;
+       left:0;
+       right:0;
+       margin:0;
+       padding:0;
+       position:fixed;
+    image-rendering: -webkit-optimize-contrast;
+    width:1366px;
+    height:175px;
+    }
+
+    .attachedHeader-nav {
+        display:flex;
+        float: left;
+    }
+
+    .attachedHeader-nav li a {
+        line-height: 1.2;  
+        position: relative; 
+        z-index: 1;
+        padding: 20px 0px 20px 50px;
+        font-family:"Cherry Bomb One", system-ui;
+         transition: transform 0.3s ease-in-out;
+         background: linear-gradient(#AD8AE1, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+         color: transparent;
+        font-size:32px;
+        display:flex;
+        margin-right:35px;
+        font-weight:600;
+        display:inline-block;
+        list-style:none;
+        text-decoration: none;
+    }
+
+    .attachedLog-nav {
+        display:flex;
+        float: right;
+        margin-left:90px;
+    }
+
+    .cartIcon {
+       transform-origin: center;
+      display:flex;
+      font-size: 40px;
+      margin:20px;
+      padding:5px;
+      color:#9F7FCF;
+      filter:
+    drop-shadow(1px 1px 0 #9F7FCF)
+    drop-shadow(-1px 1px 0 #9F7FCF)
+    }
+
+     .cartIcon2 {
+       transform-origin: center;
+      display:flex;
+      font-size: 40px;
+       margin:5px 13px 15px 10px;
+      padding:5px;
+      color:#9F7FCF;
+      filter:
+    drop-shadow(1px 1px 0 #9F7FCF)
+    drop-shadow(-1px 1px 0 #9F7FCF)
+    }
+
+    li.cartIcon ion-icon,
+    li.cartIcon2 ion-icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    }
+
+    .cartIcon-wrapper {
+    overflow: hidden;
+    }
+
+     .attachedLog-nav li a {
+        line-height: 1.2;  
+        position: relative; 
+        z-index: 1;
+        padding: 20px 0px 20px 50px;
+        font-family:"Cherry Bomb One", system-ui;
+         transition: transform 0.3s ease-in-out;
+         background: linear-gradient(#AD8AE1, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+         color: transparent;
+        font-size:32px;
+        display:flex;
+        margin-right:35px;
+        font-weight:600;
+        display:inline-block;
+        list-style:none;
+        text-decoration: none;
     }
 
       .header-nav li {
@@ -44,7 +143,9 @@
     }
 
     .log-nav li a {
-        line-height: 1.2;  
+        line-height: 1.2;
+        position: relative; 
+        z-index: 2;  
         font-family: "Cherry Bomb One", system-ui;
         padding: 10px;
          transition: transform 0.3s ease-in-out;
@@ -68,6 +169,8 @@
     }
 
     .header-nav li a {
+        position: relative; 
+        z-index: 2;
         line-height: 1.2;  
         padding: 10px;
          transition: transform 0.3s ease-in-out;
@@ -102,7 +205,11 @@ li.outline {
 
     a[href="#about"]:hover, 
     a[href="menu.html"]:hover, 
-    a[href="#loc"]:hover{ 
+    a[href="customer-service.html"]:hover,
+    a[href="login-signup.html"]:hover,
+     li.cartIcon ion-icon:hover,
+     li.cartIcon2 ion-icon:hover,
+    a[href="#loc"]:hover { 
        transform:scale(1.1);
        cursor: url('Images/1.png'), pointer; 
     }
@@ -113,7 +220,7 @@ li.outline {
     justify-content: center;
     margin:20px auto;
     padding:0;
-    background-color: #56738a;
+    background-color: #826ea0;
     width:1310px;
     height:1000px;
     }
