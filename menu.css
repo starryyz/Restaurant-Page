@@ -1,8 +1,17 @@
-body {
+<!-- Updated HTML/CSS structure for equal headers, aligned sections, and uniform cards -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sugar Cloud Boba Menu</title>
+    <link rel="stylesheet" href="menu.css" />
+    <style>
+        /* --- GLOBAL LAYOUT FIXES --- */
+        body {
             font-family: Arial, sans-serif;
-            background: #fdeaff;
             margin: 0;
-            padding: 0;
+            background: #fff7ff;
         }
 
         header img {
@@ -10,82 +19,90 @@ body {
             display: block;
         }
 
-        h2 {
+        h1.section-title {
+            width: 100%;
             text-align: center;
-            margin-top: 40px;
-            font-size: 2rem;
-            color: #b45ed1;
+            font-size: 2.2rem;
+            margin: 60px 0 20px 0;
+            color: #d67acb;
+            font-weight: bold;
         }
 
+        /* --- GRID FIX --- */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: auto;
+            padding: 20px;
         }
 
+        /* --- MENU CARD FIX --- */
         .menu-card {
             background: white;
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
             text-align: center;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .menu-card img {
-            width: 100%;
-            border-radius: 15px;
-        }
+    width: 100%;
+    height: 200px; /* uniform height */
+    object-fit: cover; /* prevents stretching */
+    display: block;
+}
 
         .menu-card h3 {
-            margin: 10px 0 5px;
-            color: #8a4bb8;
+            margin: 15px 0 5px;
         }
 
-        .menu-card .price {
+        .menu-card p {
+    padding: 0 15px;   /* left + right padding */
+    margin: 10px 0;    /* optional spacing */
+}
+
+        .price {
             font-weight: bold;
-            color: #ff64b4;
+            color: #c653b4;
+            font-size: 1.1rem;
         }
 
-        .menu-card button {
+        button {
             margin-top: 10px;
-            background: #ffb7e7;
+            padding: 10px 16px;
+            background: #e689d2;
             border: none;
-            padding: 10px 15px;
-            border-radius: 10px;
+            border-radius: 8px;
+            color: white;
             cursor: pointer;
         }
 
-        /* Popup Modal */
+        button:hover {
+            background: #d06ebc;
+        }
+
+        /* --- POPUP FIX --- */
         .popup-bg {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
         }
 
         .popup-box {
             background: white;
             padding: 25px;
-            border-radius: 20px;
-            width: 300px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            width: 300px;
         }
-
-        .popup-box button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ff64b4;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            color: white;
-        }
+   
