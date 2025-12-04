@@ -1,137 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Page</title>
-    <link href="menu.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sugar Cloud Boba Menu</title>
+    <link rel="stylesheet" href="menu.css" />
 </head>
 <body>
-     <header>
-        <h1>Sugar Cloud Boba</h1>
-        <p>Fresh • Handcrafted • Made With Love</p>
+    <header>
+        <img src="Images/banner.png" alt="Banner" />
     </header>
 
-    <section class="menu-section">
-        <h2>Drinks</h2>
-        <div class="menu-item">
-            <h3>Black Milk Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
+    <section>
+        <h2>Menu</h2>
+        <div class="menu-grid">
+             <h1>Drinks</h1>
+             <br>
+            <div class="menu-card">
+                <img src="Images/black_milk_tea.jpg" alt="Black Milk Tea" />
+                <h3>Black Milk Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Black Milk Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/brown_sugar.jpg" alt="Brown Sugar Boba Milk" />
+                <h3>Brown Sugar Boba Milk</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Brown Sugar Boba Milk')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/taro.jpg" alt="Taro Milk Tea" />
+                <h3>Taro Milk Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Taro Milk Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/thai.jpg" alt="Thai Milk Tea" />
+                <h3>Thai Milk Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Thai Milk Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/matcha.jpg" alt="Matcha Green Tea Latte" />
+                <h3>Matcha Green Tea Latte</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Matcha Green Tea Latte')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/strawberry_jasmine.jpg" alt="Strawberry Jasmine Tea" />
+                <h3>Strawberry Jasmine Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Strawberry Jasmine Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/mango_green.jpg" alt="Mango Green Tea" />
+                <h3>Mango Green Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Mango Green Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/peach_oolong.jpg" alt="Peach Oolong Tea" />
+                <h3>Peach Oolong Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Peach Oolong Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/honeydew.jpg" alt="Honeydew Milk Tea" />
+                <h3>Honeydew Milk Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Honeydew Milk Tea')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/coconut.jpg" alt="Coconut Milk Tea" />
+                <h3>Coconut Milk Tea</h3>
+                <span class="price">$6.50</span><br>
+                <button onclick="openPopup('Coconut Milk Tea')">View Options</button>
+            </div>
 
-        <div class="menu-item">
-            <h3>Brown Sugar Boba Milk</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Taro Milk Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Thai Milk Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Matcha Green tea Latte</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Strawberry Jasmine Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Mango Green Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Peach Oolong Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Honewdew Milk Tea</h3><span class="price">$6.50</span>
-            <p></p>
-        </div>
-        <div class="menu-item">
-            <h3>Coconut Milk Tea</h3><span class="price">$6.50</span>
-            <p></p>
+            <h1>Sandwiches</h1>
+            <br>
+            <div class="menu-card">
+                <img src="Images/spicy_katsu.jpg" alt="Spicy Chicken Katsu Sandwich" />
+                <h3>Spicy Chicken Katsu Sandwich</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Spicy Chicken Katsu Sandwich')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/katsu2.jpg" alt="Spicy Chicken Katsu Sandwich" />
+                <h3>Spicy Chicken Katsu Sandwich</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Spicy Chicken Katsu Sandwich')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/teriyaki.jpg" alt="Honey Teriyaki Chicken Sandwich" />
+                <h3>Honey Teriyaki Chicken Sandwich</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Honey Teriyaki Chicken Sandwich')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/banhmi.jpg" alt="Classic Banh Mi" />
+                <h3>Classic Banh Mi</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Classic Banh Mi')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/turkey_avocado.jpg" alt="Turkey Avocado Crunch" />
+                <h3>Turkey Avocado Crunch</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Turkey Avocado Crunch')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/caprese.jpg" alt="Caprese Pesto Melt" />
+                <h3>Caprese Pesto Melt</h3>
+                <span class="price">$11.99</span><br>
+                <button onclick="openPopup('Caprese Pesto Melt')">View Options</button>
+            </div>
+
+            <h1>Soups</h1>
+<br>
+            <div class="menu-card">
+                <img src="Images/miso.jpg" alt="Miso Tofu Soup" />
+                <h3>Miso Tofu Soup</h3>
+                <span class="price">$7.50</span><br>
+                <button onclick="openPopup('Miso Tofu Soup')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/corn_chowder.jpg" alt="Creamy Corn Chowder" />
+                <h3>Creamy Corn Chowder</h3>
+                <span class="price">$7.50</span><br>
+                <button onclick="openPopup('Creamy Corn Chowder')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/spicy_ramen.jpg" alt="Spicy Ramen Bowl" />
+                <h3>Spicy Ramen Bowl</h3>
+                <span class="price">$7.50</span><br>
+                <button onclick="openPopup('Spicy Ramen Bowl')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/ginger_chicken.jpg" alt="Ginger Chicken Noodle Soup" />
+                <h3>Ginger Chicken Noodle Soup</h3>
+                <span class="price">$7.50</span><br>
+                <button onclick="openPopup('Ginger Chicken Noodle Soup')">View Options</button>
+            </div>
+            <h1>Desserts</h1>
+            <br>
+            <div class="menu-card">
+                <img src="Images/mochi.jpg" alt="Mochi Ice Cream" />
+                <h3>Mochi Ice Cream (3 pc)</h3>
+                <span class="price">$3.50</span><br>
+                <button onclick="openPopup('Mochi Ice Cream')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/bubble_waffle.jpg" alt="Bubble Waffle Sundae" />
+                <h3>Bubble Waffle Sundae</h3>
+                <span class="price">$3.50</span><br>
+                <button onclick="openPopup('Bubble Waffle Sundae')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/milk_tea_cake.jpg" alt="Brown Sugar Milk Tea Cake" />
+                <h3>Brown Sugar Milk Tea Cake</h3>
+                <span class="price">$3.50</span><br>
+                <button onclick="openPopup('Brown Sugar Milk Tea Cake')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/strawberry_cheesecake.jpg" alt="Strawberry Cheesecake Slice" />
+                <h3>Strawberry Cheesecake Slice</h3>
+                <span class="price">$3.50</span><br>
+                <button onclick="openPopup('Strawberry Cheesecake Slice')">View Options</button>
+            </div>
+            <div class="menu-card">
+                <img src="Images/ube_tart.jpg" alt="Ube Custard Tart" />
+                <h3>Ube Custard Tart</h3>
+                <span class="price">$3.50</span><br>
+                <button onclick="openPopup('Ube Custard Tart')">View Options</button>
+            </div>
         </div>
     </section>
 
-    <section class="menu-section">
-        <h2>Sandwiches</h2>
-        <div class="menu-item">
-            <h3>Spicy Chicken Katsu Sandwhich</h3><span class="price">$11.99</span>
-            <p>Bacon Lettuce and tomato with a side of mayo on a toasted brioche bun</p>
+    <div class="popup-bg" id="popup">
+        <div class="popup-box">
+            <h3 id="popup-title">Item</h3>
+            <p>Add this item to your cart?</p>
+            <button onclick="addToCart()">Add to Cart</button>
+            <br /><br />
+            <button onclick="closePopup()" style="background:#ccc;color:black;">Cancel</button>
         </div>
+    </div>
 
-        <div class="menu-item">
-            <h3>Spicy Chicken Katsu Sandwhich</h3><span class="price">$11.99</span>
-            <p>Crispy panko-freid chicken breast with spicy mayo, pickles, and cabbage on toasted brioche</p>
-        </div>
+    <script>
+        let selectedItem = '';
 
-        <div class="menu-item">
-            <h3>Honey Teriyaki Chicken Sandwhich</h3><span class="price">$11.99</span>
-            <p>Grilled chicken glazed in teriyaki, with lettuce, tomato, and sesame-mayo on soft roll bread</p>
-        </div>
-        <div class="menu-item">
-            <h3>Classic Banh Mi</h3><span class="price">$11.99</span>
-            <p>Marinated Pork or tofu, pickeled carrots, cucumber, cilantro & jalapeño on a baguette with tangy mayo</p>
-        </div>
-        <div class="menu-item">
-            <h3>Turkey Avocado Crunch</h3><span class="price">$11.99</span>
-            <p>Oven-roasted turkey, avocado, crisp lettuce, tomato, and peppercorn mayo on multigrain bread</p>
-        </div>
-        <div class="menu-item">
-            <h3>Caprese Pesto Melt</h3><span class="price">$11.99</span>
-            <p>Mozzarella, basil pesto, tomato & balsamic glaze pressed warm and melty</p>
-        </div>
-    </section>
+        function openPopup(item) {
+            selectedItem = item;
+            document.getElementById('popup-title').innerText = item;
+            document.getElementById('popup').style.display = 'flex';
+        }
 
-    <section class="menu-section">
-        <h2>Soups</h2>
-        <div class="menu-item">
-            <h3>Miso Tofu Soup</h3><span class="price">$7.50</span>
-            <p>Traditional Japanese miso broth with tofu cubes, seaweed, scallions & a light umami finish</p>
-        </div>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
 
-        <div class="menu-item">
-            <h3>Creamy Corn Chowder</h3><span class="price">$7.50</span>
-            <p>Thick, buttery chowder with sweet corn, potatoes, and herbs -- cozy and comforting</p>
-        </div>
-
-        <div class="menu-item">
-            <h3>Spicy Ramen Bowl</h3><span class="price">$7.50</span>
-            <p>Savory broth with noodles, soft egg, scallions & chili oil for a spicy kick</p>
-        </div>
-
-        <div class="menu-item">
-            <h3>Ginger Chicken Noodle Soup</h3><span class="price">$7.50</span>
-            <p>Slow-simmered chicken broth with noodles, carrots, celery, and warming ginger</p>
-        </div>
-    </section>
-
-    <section class="menu-section">
-        <h2>Sides & Side Salads</h2>
-        <div class="menu-item">
-            <h3>Seaweed Salad</h3><span class="price">$4.50</span>
-            <p>Fresh, slightly sweet marinated seaweed with seasame and citrus brightness</p>
-        </div>
-
-        <div class="menu-item">
-            <h3>Edamame (Steamed &</h3><span class="price">$4.50</span>
-            <p>Thick, buttery chowder with sweet corn, potatoes, and herbs -- cozy and comforting</p>
-        </div>
-
-        <div class="menu-item">
-            <h3>Spicy Ramen Bowl</h3><span class="price">$4.50</span>
-            <p>Savory broth with noodles, soft egg, scallions & chili oil for a spicy kick</p>
-        </div>
-
-        <div class="menu-item">
-            <h3>Ginger Chicken Noodle Soup</h3><span class="price">$4.50</span>
-            <p>Slow-simmered chicken broth with noodles, carrots, celery, and warming ginger</p>
-        </div>
-    </section>
-<script src="boba.js"></script>
+        function addToCart() {
+            alert(selectedItem + ' added to cart!');
+            closePopup();
+        }
+    </script>
 </body>
+<footer>
+    <p style="text-align:center;padding:20px;">&copy; Last updated 12/3/2025</p>
+</footer>
 </html>
