@@ -4,7 +4,11 @@
     box-sizing: border-box;
     cursor: url("Images/2.png"), auto;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+ 
+}
+.logo{
+    display: flex;
+    justify-content: center;
 }
 body {
     font-family: Arial, sans-serif;
@@ -12,17 +16,17 @@ body {
     margin: 0;
     padding: 0;
 }
-.links{
+.links {
     display: flex;
     align-items: center;
     height: 80px;
     margin-left: 10px;
 }
-.links:hover{
+.links a:hover {
     cursor: url("Images/1.png"), pointer;
 }
 .container {
-    width: 90%;
+    width: 70%;
     max-width: 900px;
     margin: 30px auto;
     background: white;
@@ -30,25 +34,21 @@ body {
     padding: 20px 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
-h2 {
-    color: #6a59d1;
-    margin-bottom: 20px;
+h2 { 
+    color: #6a59d1; 
+    margin-bottom: 20px; 
 }
-
 .section {
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ddd;
 }
-
 label {
     display: block;
     margin-bottom: 6px;
     color: #555;
     font-weight: bold;
 }
-
 input, select {
     width: 100%;
     padding: 10px;
@@ -56,21 +56,22 @@ input, select {
     border-radius: 10px;
     border: 1px solid #bbb;
     font-size: 16px;
+    transition: 0.2s;
 }
-
+input.invalid {
+    border: 2px solid red;
+}
 .summary-box {
     background: #f4f0ff;
     padding: 15px;
     border-radius: 15px;
     margin-top: 10px;
 }
-
 .summary-box p {
     display: flex;
     justify-content: space-between;
     margin: 8px 0;
 }
-
 .checkout-btn {
     width: 100%;
     padding: 15px;
@@ -82,9 +83,11 @@ input, select {
     cursor: pointer;
     transition: 0.3s;
 }
-
 .checkout-btn:hover {
     background: #6848df;
-    cursor: url("Images/1.png"), pointer;
 }
-.summary-box p { display:flex; justify-content:space-between; margin:8px 0; }
+.footer{
+    margin-top: 20px;
+    text-align: center;
+    height: 100px;
+}
