@@ -1,9 +1,16 @@
   
+    /*  Selects all elements and hides overflow + also the cursor is changed to be custom */
     * {
     overflow-x: hidden;
     cursor: url("Images/2.png"), auto; 
-    }
+  scrollbar-width: none;     
+  -ms-overflow-style: none;  
+}
 
+*::-webkit-scrollbar {
+  display: none;              
+}
+    /* Flexbox Container for overall layout */
     .flexbox-container {
     display:flex;
     flex-direction: column;
@@ -11,14 +18,21 @@
     padding:0;
 }   
 
+  body {
+    margin: 0;
+    padding:0;
+  }
+
+    /* Banner Image at the top of the page */
     .banner {
     background-image: url(Images/banner.png);
     background-size: 100% auto;
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
-    height:175px;
+    height:1110px;
     }
 
+    /* Header Section Style (comes with nav) */
     .header {
     top:0;
     position:relative;
@@ -28,9 +42,10 @@
       image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
-    height:130px;
+    height:530px;
     }
 
+    /* Attached Header Section Style (shows up when scrolling) */
     .attachedHeader-section {
     position: fixed;
     top: 0;
@@ -39,6 +54,7 @@
     z-index: 999;
 }
 
+    /* Attached Header Nav Style (shows up when scrolling) */
     .attachedHeader-nav {
       background-image: url(Images/attachedBanner.png);
       background-size: 100% auto;
@@ -54,11 +70,13 @@
     height:165px;
     }
 
+    /* Navigation Section Style for attached Header */
     .attachedHeader-nav {
         display:flex;
         float: left;
     }
 
+    /* Navigation Links Style for attached Header */
     .attachedHeader-nav li a {
         line-height: 1.2;  
         position: relative; 
@@ -79,24 +97,27 @@
         text-decoration: none;
     }
 
+    /* Login and Cart Section Style for attached Header */
     .attachedLog-nav {
         display:flex;
         float: right;
         margin-left:90px;
     }
 
+      /* Cart Icon but for header */
     .cartIcon {
        transform-origin: center;
       display:flex;
       font-size: 40px;
-      margin:5px 20px 20px 20px;
-      padding:5px;
+      margin:2px 20px 20px 20px;
+      padding:10px;
       color:#9F7FCF;
       filter:
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
     }
 
+      /* Cart Icon Style but for attached Header */
      .cartIcon2 {
        transform-origin: center;
       display:flex;
@@ -108,17 +129,19 @@
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
     }
-
+    /* Cart Icon Hover Effect */
     li.cartIcon ion-icon,
     li.cartIcon2 ion-icon {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
     }
 
+    /* Cart Icon Wrapper */
     .cartIcon-wrapper {
     overflow: hidden;
     }
 
+    /* Login and Cart Section Style for attached Header */
      .attachedLog-nav li a {
         line-height: 1.2;  
         position: relative; 
@@ -139,6 +162,7 @@
         text-decoration: none;
     }
 
+    /* List Item Style for Login and Cart Section */
       .header-nav li {
     font-family: "Cherry Bomb One", system-ui;
     float: left;
@@ -146,12 +170,13 @@
     
     }
 
+    /* Login and Cart Section Style */
     .log-nav {
         display:flex;
         margin: 5px 13px 15px 10px;
         float: right;
     }
-
+ /* Login and Cart Section Style */
     .log-nav li a {
         line-height: 1.2;
         position: relative; 
@@ -172,17 +197,19 @@
         text-decoration: none;
     }
 
+      /* Navigation Section Style */
     .header-nav {
         display:flex;
-        margin: 5px 13px 15px 10px;
+        margin: 14px 13px 15px 10px;
         float: left;
     }
 
+    /* Navigation Links Style */
     .header-nav li a {
         position: relative; 
         z-index: 1;
         line-height: 1.2;  
-        padding: 10px;
+        padding-left: 13px;
          transition: transform 0.3s ease-in-out;
          background: linear-gradient(#AD8AE1, #ffffff);
         -webkit-background-clip: text;
@@ -197,11 +224,8 @@
         text-decoration: none;
     }
 
-    li.bg {
-        background-color: blue;
-    }
-
-li.outline {
+/* Outline Effect for Text */
+.outline {
   filter:
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
@@ -213,6 +237,29 @@ li.outline {
     drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
 
+/* Gradient Text Effect */
+.gradient {
+  background: linear-gradient(#c1bdc7, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient2 {
+   background: linear-gradient(#C9B2EC, #EAE1F7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient3 {
+   background: linear-gradient(#cfc0e6, #EAE1F7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:transparent;
+}
+
+    /* Hover Effects for Nav Links and Cart Icon */
     a[href="#about"]:hover, 
     a[href="menu.html"]:hover, 
     a[href="customer-service.html"]:hover,
@@ -224,26 +271,354 @@ li.outline {
        cursor: url('Images/1.png'), pointer; 
     }
 
+    /* Main Background behind EVERYTHING */
     .background {
     display:flex;
     border-radius:5px;
     justify-content: center;
     margin:20px auto;
     padding:0;
-    background-color: #826ea0;
+    background: linear-gradient(#8c75bc, #AD8AE1);
     width:1310px;
     height:1000px;
     }
 
+    /* Button Text Style (front page picture button) */
+    .btn-menu {
+        margin:0;
+        padding: 0;
+    }
+
+/* Button Wrapper Section (front page picture) */
+   .button-wrapper {
+    margin-top: 80px;
+    padding:10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slogan Wrapper Section */
+.slogan-wrapper {
+  margin-top: 70px;
+  padding:5px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
+
+/* Edited text for "Pure" slogan */
+.pure {
+  font-family:'Cherry Bomb One', system-ui;
+  margin:0;
+  font-size: 80px;    
+  font-weight: 700;    
+}
+
+/* Edited text for "Sugar Bliss" slogan */
+.sl2 {
+  font-family:'DynaPuff', system-ui;
+  margin:0;
+  font-size: 40px;     
+  font-weight: 600;    
+}
+
+  /* General Button Style (and also for the "View menu" button on the front picture)*/
+    .btn {
+      transition: transform 0.3s ease-in-out;
+      font-family: "Cherry Bomb One", system-ui;
+      font-size:23px;
+        display:inline-block;
+        padding: 10px 30px;
+        font-weight:300;
+        width:200px;
+        height:55px;
+        text-decoration: none;
+        border-radius:200px;
+        color:#fff;
+    }
+  /* Optional darker outline style for text */
+    .darkerOutline {
+  filter:
+     drop-shadow(1px 1px 0 #8b63c6)
+    drop-shadow(-1px 1px 0 #8b63c6)
+    drop-shadow(1px -1px 0 #8b63c6)
+    drop-shadow(-1px -1px 0 #8b63c6)
+    drop-shadow(1.6px 1.6px 0 #8b63c6)
+    drop-shadow(-1.5px 2px 0 #8b63c6)
+    drop-shadow(1.5px -2px 0 #8b63c6)
+    drop-shadow(-1.5px -1.5px 0 #8b63c6);
+
+    }
+
+    /*Button Style for "view menu" button in the front picture of the homepage */
+    .btn-full {
+        margin-right:20px;
+        background: linear-gradient(#966cd5, #AD8AE1);
+        border:6px solid #8357c4;
+        color:#ffffff;
+    }
+
+    .btn-full:hover,
+    .btn-menu:hover {
+    cursor: url("Images/1.png"), pointer;
+}
+
+ /* Background for the front image */
     .background2 {
-    top:0;
+    top:-10px;
     position:relative;
     z-index:1;
-    background-image:linear-gradient(rgba(109, 64, 111, 0.4), rgba(109, 64, 111, 0.4)), url("Images/bg2.jpg");
+    border-radius:6px;
+    background-image:url("Images/bg2.jpg");
+    background-color: rgba(151, 152, 194, 0.8); 
+    background-blend-mode: multiply;
     background-size: 100% auto;
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
-    margin: -60px 0 0 0;
-    height:400px;
+    height:1900px;
+    margin: -35px 0 0 0;
     }
+
+  .marquee {
+  width: max-content; 
+  height: 75px;
+  overflow: hidden;
+  background-color: #8c75bc;
+  display: flex;
+}
+
+.marquee-content {
+   letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-top:30px;
+  font-family:'DynaPuff', system-ui;
+  color:rgb(217, 201, 214);
+   font-size: 17px;
+   font-weight:600;
+    gap: 20rem;  
+  display: flex;
+  align-items: flex-start;   
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.marquee-content span {
+ width: max-content; 
+ white-space: nowrap;   
+  margin-top:17px;
+}
+@keyframes marquee {
+   0% { transform: translateX(100%); }
+   100% { transform: translateX(-100%); }
+}
+
+
+    .pulse {
+  display: inline-block;
+  transform-origin: center;
+  animation: pulseSubtle 1.6s ease-in-out infinite;
+}
+@keyframes pulseSubtle {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.04); opacity: .92; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.shake:hover {
+  animation: shake 0.45s ease-in-out;
+}
+
+@keyframes shake {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(1.5deg); }
+  40%  { transform: rotate(-1.5deg); }
+  60%  { transform: rotate(1deg); }
+  80%  { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+    /* spacer for spaces between sections*/
+   .spacer {
+    height: 100px;
+    width: 100%;
+}
+    /* Background for the about us section */
+    .background3 {
+      top:0;
+    position:relative;
+    z-index:1;
+    border-radius:6px;
+    background-color: rgb(109, 90, 141); 
+    background-size: 100% auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    width:1300px;
+    height:900px;
+    margin: 0 0 0 0;
+    }
+
+    .background4 {
+      top:0;
+    position:relative;
+    z-index:1;
+    border-radius:6px;
+    background-color: rgb(109, 90, 141); 
+    background-size: 100% auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    width:1300px;
+    height:900px;
+    margin: 0 0 0 0;
+    }
+
+   .menu-flexbox {
+    display:flex;
+    flex-direction: row;   
+    justify-content: center;
+    margin:20px auto;
+    padding:0;
+}
+
+    .flexbox-item {
+    border-radius: 5px;
+    margin:10px;
+    padding:0;
+    overflow:hidden;
+    text-align:center;
+    background-color: #3f3737;
+}
+
+  .flexbox-item-1 {
+    width:326px;
+    height:350px;
+  }
+
+    .flexbox-item-2 {
+    width:690px;
+    height:350px;
+  }
+
+  .flexbox-item-3, 
+  .flexbox-item-4 {
+    width:39%;
+    height:300px;
+  }
+
+.items {
+display:flex;
+justify-content: center;
+flex-direction:row;
+flex-grow:1px;
+flex-basis:0px;
+}
+
+       .text-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutHeader {
+  font-family:"Cherry Bomb One", system-ui;
+  font-size:35px;
+}
+
+.aboutDesc {
+  line-height: 1.6;
+   font-family:'DynaPuff', system-ui;
+   font-size: 20px;
+   font-weight:600;
+   width:900px;
+}
+
+.flexbox-item-5 {
+  width:500px;
+  height:400px;
+}
+
+.flexbox-item-6 {
+   width:500px;
+  height:400px;
+}
+
+ footer {
+    margin:0;
+    padding:0;
+    background-color: #333;
+    padding: 20px;
+    padding-top:60px;
+    font-size: 80%;
+}
+
+.footer {
+  margin:0;
+  padding:0;
+}
+
+
+.footer p {
+    color: #aaaaaa;
+}
+
+  .footer-nav li {
+    float: left;
+    list-style: none;
+    }
+
+    .social-links li {
+    float: right;
+    list-style: none;        
+    }
+
+    .social-links {
+    list-style: none;
+    float: right;
+}
+
+    .footer-nav li a {
+        font-size:18px;
+        display:flex;
+        float:left;
+        font-weight:300;
+        text-decoration: none;
+        color:#888888;
+        margin: 0 10px;
+        padding:1px 5px;
+    }
+    
+     a[href="flink"]:hover {
+       color:#bab8b8;
+    }
+
+     .facebook:hover {
+    color: rgb(59, 89, 152);
+ }
+
+  .google:hover {
+    color: rgb(221, 75, 57);
+ }
+
+   .instagram:hover {
+    color: rgb(188, 42, 141);
+ }
+
+
+     .social-logo {
+        display: inline-block;
+    width: 70px;
+    text-align: right;
+    color: #888888;
+    font-size: 25px;
+    margin-right: 0px;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -4px;
+ }
