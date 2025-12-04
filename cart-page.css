@@ -5,6 +5,30 @@
     font-family: 'Courier New', Courier, monospace;
     cursor: url("Images/2.png"), auto;
 }
+.banner-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;               /* ← removes the space between banners */
+    margin-bottom: 0;
+}
+
+.top-banner {
+    width: 100%;
+}
+
+.top-banner img {
+    width: 100%;
+    display: block;
+    border-radius: 0;     /* ← removes rounding so they align perfectly */
+    object-fit: cover;
+    box-shadow: none;     /* ← removes the shadow at the bottom */
+    margin: 0;
+    padding: 0;
+}
+
+
+
 body {
     background: linear-gradient(135deg, hsl(260, 100%, 84%), hsl(217, 90%, 84%), hsl(326, 96%, 80%));
     color: #4a4a4a;
