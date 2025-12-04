@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud-Themed Shopping Cart</title>
-  <link href="cart-page.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link href="cart-page.css" rel="stylesheet">
+  </head>
 <body>
-  <div class="logo">
-    <h3>LOGO HERE</h3>
-  </div>
-      <div class="heading">
-        <h2>☁️Your Cloud Boba Order🧋</h2>
-      </div>
-          <div class="container">
-            <div class="menu">
-              <h2>Menu Items</h2>
-                <div class="item"><span>Strawberry Dream - $4.50</span><button onclick="addToCart('Strawberry Dream', 4.50)">Add</button></div>
-                <div class="item"><span>Blueberry Mist - $5.00</span><button onclick="addToCart('Blueberry Mist', 5.00)">Add</button></div>
-                <div class="item"><span>Lavender Cloud Tea - $5.75</span><button onclick="addToCart('Lavender Cloud Tea', 5.75)">Add</button></div>
-                <div class="item"><span>Pink Marshmallow Shake - $6.25</span><button onclick="addToCart('Pink Marshmallow Shake', 6.25)">Add</button></div>
-            </div>
-                <div class="cart">
-                  <h2>Your Cart</h2>
-                  <ul id="cartList"></ul>
-                  <p>Total: $<span id="cartTotal">0.00</span></p>
-                  <button class="checkout-btn" onclick="goToCheckout()">Continue to Checkout</button>
-                </div>
-          </div>
-        <div class="footer">
-            <ion-icon name="logo-instagram"></ion-icon>
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="logo-twitter"></ion-icon>
-        </div>
-          <div class="footer-two">
-            <a href="#">Legal</a>
-            <a href="#">Supply Chain</a>
-            <a href="#">Customer Health Data</a>
-            <a href="#">Terms & Conditions of Use</a>
-          </div>
-        <div class="copyright">
-          <p> &copy; 2025 SCB Properties, Inc. All rights reserved.</p>
-        </div>
+<div class="menu" id="menuSidebar">
+        <h2>Add Ons</h2>
+        <input type="text" id="menuSearch" placeholder="Search menu..." class="search-bar">
+    <div class="menu-items">
+        <div class="item"><span>Upgrade to a Large - $2.79</span><button onclick="addToCart('Large', 2.79)">Add</button></div>
+        <div class="item"><span>Whipped Cream - $0.70</span><button onclick="addToCart('Whipped Cream', 0.70)">Add</button></div>
+        <div class="item"><span>Honey Syrup - $0.70</span><button onclick="addToCart('Honey Syrup', 0.70)">Add</button></div>
+        <div class="item"><span>Double Popping Pearls - $0.70</span><button onclick="addToCart('2x Popping Pearls', 0.70)">Add</button></div>
+        <div class="item"><span>Cold Foam - $0.70</span><button onclick="addToCart('Cold Foam', 0.70)">Add</button></div>
+        <div class="item"><span>Caramel Drizzle - $0.70</span><button onclick="addToCart('Caramel Drizzle', 0.70)">Add</button></div>
+        <div class="item"><span>Cookie Butter - $0.70</span><button onclick="addToCart('Cookie Butter', 0.70)">Add</button></div>
+        <div class="item"><span>Nutella - $0.70</span><button onclick="addToCart('Nutella', 0.70)">Add</button></div>
+        <div class="item"><span>Marshmallow - $0.70</span><button onclick="addToCart('Marshmallow', 0.70)">Add</button></div>
+    </div>
+</div>
+<button id="menuToggle" class="menu-toggle">⮜</button>
 
- <script src="cart.js"></script>
+<div class="container">
+    <div class="logo"><h3>BANNER</h3></div>
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <input type="text" id="cartSearch" placeholder="Search cart..." class="search-bar">
+        <ul id="cartList"></ul>
+        <p><strong>Total: $<span id="cartTotal">0.00</strong></span></p>
+        <a href="checkout.html" class="checkout-btn">Continue to Checkout</a>
+    </div>
+</div>
+
+<div class="logo-footer">
+    <img src="/Restaurant-Page/Images/logo.png" alt="Your Company Logo" height="150">
+</div>
+<footer style="text-align:center; padding: 15px; color:#616161;">
+    <p>&copy; 2025 SCB Properties, Inc. All rights reserved.</p>
+</footer>
+
+<script src="cart.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
