@@ -123,17 +123,19 @@ button:hover {
     width: 300px;
 }
 
-footer {
+.footer {
     width: 100%;
-    text-align: center;
-    margin: 0 auto;
+    padding: 20px 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;   /* stays at bottom */
-    bottom: 0;         /* sticks to bottom */
-    left: 0;
-    padding: 10px 0;
-    background: #fff7ff; /* match your page background */
+    text-align: center;
 }
+
+.footer-container {
+    max-width: 1200px; /* same as your menu grid */
+    width: 100%;
+    text-align: center;  /* center text inside container */
+    color: #c653b4;
+    font-weight: bold;
+    font-size: 1rem;
+}
+

@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #fff7ff;
+    color: #4d2c5b;
+}
+
+.header-top {
+    width: 100%;
+    text-align: center;
+}
+
+.banner-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.nav-menu {
+    width: 100%;
+    background: linear-gradient(to right, #d3b2f5, #c6a7f0);
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: -10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-menu li {
+    display: inline-block;
+}
+
+.nav-menu a {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #f0d4ff;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #6b3a9c;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: #e5a9f1;
+    color: white;
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f3e0ff;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #d67acb;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.contact-form-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9e7ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    color: #d67acb;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d3b2f5;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #A79FE3;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #E5A9F1;
+}
+
+.faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: #d67acb;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background: #f3e0ff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.faq-item h3 {
+    margin: 0 0 8px 0;
+}
+
+.faq-item p {
+    margin: 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 0;
+    background: hsl(300, 37%, 22%);
+    color: #c653b4;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    margin-top: 40px;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #f9e7ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    z-index: 1000;
+}
+
+.chatbot-header {
+    background: linear-gradient(to right, #d3b2f5, #c6a7f0);
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.chatbot-body {
+    height: 280px;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff7ff;
+}
+
+.bot-message {
+    background: #d3b2f5;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 15px;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #A79FE3;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 15px;
+    align-self: flex-end;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.option-btn {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #d67acb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.option-btn:hover {
+    background: #E5A9F1;
+    transform: scale(1.05);
+}

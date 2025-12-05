@@ -3,12 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Service Page</title>
-    <link href="customer-service.css" rel="stylesheet">
+    <title>Sugar Cloud Boba - Customer Service</title>
+    <link rel="stylesheet" href="customer-service.css">
 </head>
 <body>
-<h1>Customer Service Page</h1>
-    
-<script src="boba.js"></script>
+
+    <header>
+        <div class="header-top">
+            <img src="Images/banner.png" alt="Sugar Cloud Boba Banner" class="banner-img">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="customer-service.html">Customer Service</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#"><img src="Images/cart-icon.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Customer Service</h1>
+        <p>SugarBot is ready to help you with questions about our drinks, orders, and more!</p>
+    </section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3>What are your store hours?</h3>
+        <p>We are open daily from 10 AM to 9 PM.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Do you offer vegan options?</h3>
+        <p>Yes! Many of our drinks and desserts have vegan-friendly options. Ask our staff for details.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How can I track my order?</h3>
+        <p>If you ordered online, you'll receive an email confirmation with a tracking link.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Can I request a refund?</h3>
+        <p>Yes! SugarBot can guide you through refund requests. Click the chatbot to start the process.</p>
+    </div>
+</section>
+
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">SugarBot 🤖</div>
+        <div class="chatbot-body" id="chatbot-body">
+            <div class="bot-message">Hi! I'm SugarBot. What can I help you with today?</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© Last updated on 12/5/2025 - Sugar Cloud Boba</p>
+    </footer>
+
+    <script>
+        const chatbotBody = document.getElementById('chatbot-body');
+
+        const conversation = [
+            {
+                message: "Hi! I'm SugarBot. What can I help you with today?",
+                options: [
+                    { text: "Order Status", response: "To check your order, please provide your order number." },
+                    { text: "Menu Questions", response: "We have a variety of drinks, desserts, and snacks. What would you like to know?" },
+                    { text: "Other Questions", response: "Sure! Tell me a bit more about your question." }
+                ]
+            },
+            {
+                message: "Would you like to speak to a live agent or continue with me?",
+                options: [
+                    { text: "Live Agent", response: "Okay! Please wait, a representative will assist you shortly." },
+                    { text: "Continue with SugarBot", response: "Great! I'm happy to help you further." }
+                ]
+            },
+            {
+                message: "Do you want tips on our most popular drinks?",
+                options: [
+                    { text: "Yes", response: "Our Brown Sugar Boba Milk and Taro Milk Tea are customer favorites! 🍹" },
+                    { text: "No", response: "No problem! Let me know if you have another question." }
+                ]
+            }
+        ];
+
+        let step = 0;
+
+        function addBotMessage(text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('bot-message');
+            msgDiv.textContent = text;
+            chatbotBody.appendChild(msgDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('user-message');
+            msgDiv.textContent = text;
+            chatbotBody.appendChild(msgDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        function displayOptions(options) {
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('options-container');
+
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.classList.add('option-btn');
+                btn.textContent = opt.text;
+                btn.onclick = () => handleOption(opt);
+                optionsDiv.appendChild(btn);
+            });
+
+            chatbotBody.appendChild(optionsDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        function handleOption(option) {
+            addUserMessage(option.text);
+            const optionContainers = document.querySelectorAll('.options-container');
+            optionContainers.forEach(el => el.remove());
+            setTimeout(() => addBotMessage(option.response), 500);
+
+            step++;
+            if (conversation[step]) {
+                setTimeout(() => displayOptions(conversation[step].options), 1000);
+            } else {
+                setTimeout(() => addBotMessage("Thank you for chatting with me! Refresh to start again."), 1000);
+            }
+        }
+
+        displayOptions(conversation[step].options);
+    </script>
 </body>
 </html>
