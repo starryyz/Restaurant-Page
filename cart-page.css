@@ -8,25 +8,24 @@
 .banner-stack {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 0;               /* ← removes the space between banners */
-    margin-bottom: 0;
+    flex-direction: column; 
+    margin-bottom: 20px;
 }
 
 .top-banner {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .top-banner img {
     width: 100%;
-    display: block;
-    border-radius: 0;     /* ← removes rounding so they align perfectly */
+    max-height: 200px;
     object-fit: cover;
-    box-shadow: none;     /* ← removes the shadow at the bottom */
-    margin: 0;
-    padding: 0;
+    display: block;
+    border-radius: 10px;
+ 
 }
-
 
 
 body {
