@@ -11,7 +11,6 @@
     flex-direction: column; 
     margin-bottom: 20px;
 }
-
 .top-banner {
     width: 100%;
     display: flex;
@@ -24,10 +23,7 @@
     object-fit: cover;
     display: block;
     border-radius: 10px;
- 
 }
-
-
 body {
     background: linear-gradient(135deg, hsl(260, 100%, 84%), hsl(217, 90%, 84%), hsl(326, 96%, 80%));
     color: #4a4a4a;
@@ -67,8 +63,7 @@ body {
     color: #8a67d6;
     margin-bottom: 15px;
     position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.55);
+    top: 0; 
     padding: 10px 0;
     z-index: 5;
 }
@@ -102,7 +97,7 @@ body {
     width: 12px;
 }
 .menu .menu-items::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, #f5e9ff, #e3d7ff, #ffd7e8);
+    background: #E5A9F1;
     border-radius: 12px;
     margin: 5px;
 }
@@ -119,7 +114,7 @@ body {
     top: 50%;
     left: 0;
     transform: translate(-50%, -50%);
-    background: lab(26.7% 51.64 -42.95);
+    background-color: #a175d3;
     border: none;
     padding: 10px 14px;
     border-radius: 0 12px 12px 0;
@@ -181,7 +176,7 @@ button, .checkout-btn {
     margin-top: 20px;
 }
 .menu .menu-items .item button {
-    background: linear-gradient(145deg, #c7b7ff, #b39bff);
+    background: #A79FE3;
     color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -190,7 +185,7 @@ button, .checkout-btn {
     transform: translateY(-2px);
 }
 .remove-btn {
-    background: linear-gradient(145deg, #ffb3e6, hsl(319, 92%, 85%));
+    background: #A79FE3;
     color: white;
     border-radius: 10px;
     padding: 4px 8px;
@@ -199,11 +194,12 @@ button, .checkout-btn {
     cursor: pointer;
 }
 .remove-btn:hover {
-    background: linear-gradient(145deg, hwb(290 67% 1%), #ff80cc);
+    background: #E5A9F1;
     transform: translateY(-1px);
+    cursor: url("Images/1.png"), pointer;
 }
 .checkout-btn {
-    background: linear-gradient(145deg, #ffb3e6, hsl(299, 100%, 84%));
+    background: #A79FE3;
     color: white;
     border-radius: 16px;
     padding: 12px 24px;
@@ -212,9 +208,10 @@ button, .checkout-btn {
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    cursor: url("Images/1.png"), pointer;
 }
 .checkout-btn:hover {
-    background: linear-gradient(145deg, #ff99dd, hsl(230, 94%, 81%));
+    background: #E5A9F1;
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
@@ -226,4 +223,12 @@ button, .checkout-btn {
     .menu { width: 220px; }
     .container { margin-left: 40px; }
     .menu.open + .container { margin-left: 240px; }
+}
+
+button:hover{
+    cursor: url("Images/1.png"), pointer;
+}
+
+input:hover{
+    cursor: url("Images/1.png"), pointer;
 }

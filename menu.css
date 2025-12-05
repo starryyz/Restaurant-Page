@@ -6,46 +6,46 @@ button:hover{
     cursor: url("Images/1.png"), pointer;
 }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #fff7ff;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff7ff;
+}
 
-        header img {
-            width: 100%;
-            display: block;
-        }
+header img {
+    width: 100%;
+    display: block;
+}
 
-        h1.section-title {
-            width: 100%;
-            text-align: center;
-            font-size: 2.2rem;
-            margin: 60px 0 20px 0;
-            color: #d67acb;
-            font-weight: bold;
-        }
+h1.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 60px 0 20px 0;
+    color: #d67acb;
+    font-weight: bold;
+}
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .menu-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-            padding-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.menu-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
         .menu-card img {
     width: 100%;
