@@ -14,7 +14,7 @@
     z-index: 1000;
 }
 .login-signup-container{
-    position: right ;
+    position: relative ;
     width: 100%;
     min-height: 100vh;
     background-image: url("Images/bg-login7.png");
