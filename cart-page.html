@@ -2,23 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart Page</title>
     <link href="cart-page.css" rel="stylesheet">
   </head>
 <body>
-<div class="banner-stack">
-    <div class="top-banner">
-        <img src="/Restaurant-Page/Images/banner.png" alt="Banner 1">
-    </div>
+<header>
+</header>
 
-    <div class="top-banner">
-        <img src="/Restaurant-Page/Images/attachedBanner.png" alt="Banner 2">
-    </div>
+<div class="banner"></div>  <!-- Long Banner Image (Sugar Boba Cloud) -->
+    <!-- Header Section -->
+    <div class="header">
+        <ul class="header-nav"> <!-- Navigation Section -->
+            <li  class="outline"><a href="home1.html">Back</a></li>
+        </ul>
+    <ul class="log-nav"> <!-- Login and Cart Section (also apart of nav) -->
+         <li class="outline"><a class="bg" href="login-signup.html">Login</a></li>
+         <div class="cartIcon-wrapper"><a href="cart-page.html">
+          <li class="cartIcon shake"><ion-icon name="cart-outline"></ion-icon></li>
+         </div></a>
+    </ul>
 </div>
+
 <div class="menu" id="menuSidebar">
-        <h2>Add Ons</h2>
-        <input type="text" id="menuSearch" placeholder="Search menu..." class="search-bar">
+    <h2>Add Ons</h2>
+    <input type="text" id="menuSearch" placeholder="Search menu..." class="search-bar">
     <div class="menu-items">
         <div class="item"><span>Upgrade to a Large - $2.79</span><button onclick="addToCart('Large', 2.79)">Add</button></div>
         <div class="item"><span>Whipped Cream - $0.70</span><button onclick="addToCart('Whipped Cream', 0.70)">Add</button></div>
@@ -31,14 +44,17 @@
         <div class="item"><span>Marshmallow - $0.70</span><button onclick="addToCart('Marshmallow', 0.70)">Add</button></div>
     </div>
 </div>
+
 <button id="menuToggle" class="menu-toggle">⮜</button>
 
 <div class="container">
     <div class="cart">
-        <h2>Your Cart</h2>
+        <h2 class><div class="darkerOutline cartText">Your Cart</div></h2>
         <input type="text" id="cartSearch" placeholder="Search cart..." class="search-bar">
         <ul id="cartList"></ul>
-        <p><strong>Total: $<span id="cartTotal">0.00</strong></span></p>
+
+        <p><strong>Total: $<span id="cartTotal">0.00</span></strong></p>
+
         <a href="checkout.html" class="checkout-btn">Continue to Checkout</a>
     </div>
 </div>
@@ -46,6 +62,7 @@
 <div class="logo-footer">
     <img src="/Restaurant-Page/Images/logo.png" alt="Your Company Logo" height="150">
 </div>
+
 <footer style="text-align:center; padding: 15px; color:#616161;">
     <p>&copy; 2025 SCB Properties, Inc. All rights reserved.</p>
 </footer>
@@ -53,7 +70,6 @@
 <script src="cart.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
-
-
