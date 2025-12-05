@@ -14,7 +14,7 @@
     z-index: 1000;
 }
 .login-signup-container{
-    position: right ;
+    position: relative ;
     width: 100%;
     min-height: 100vh;
     background-image: url("Images/bg-login7.png");
@@ -155,4 +155,121 @@ input:hover{
 
 #signupcontainer{
     display: none;
+}
+
+@media (max-width: 900px) {
+    .logo {
+        width: 250px;
+        left: -10px;
+    }
+
+    .web-title {
+        font-size: 55px;
+        margin-right: 0;
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .login-signup-container {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .forms {
+        width: 350px;
+        padding: 30px;
+    }
+
+    .login1 {
+        font-size: 32px;
+    }
+
+    .login-btn,
+    .signup-link {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+
+/* ----------  SMALL SCREENS: Phones 600px ↓ ---------- */
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .logo {
+        width: 180px;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+
+    .web-title {
+        font-size: 40px;
+        margin-top: 180px;     /* makes room for logo */
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .login-signup-container {
+        align-items: flex-start;
+        padding-top: 50px;
+        justify-content: center;
+        background-size: cover;
+    }
+
+    .forms {
+        width: 90%;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .login1 {
+        font-size: 28px;
+    }
+
+    .login1-1 input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .login-btn,
+    .signup-link {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        font-size: 0.75rem;
+        position: relative;
+        bottom: 0;
+        margin-top: 30px;
+    }
+}
+
+
+/* ---------- VERY SMALL SCREENS 400px ↓ ---------- */
+@media (max-width: 400px) {
+
+    .web-title {
+        font-size: 32px;
+    }
+
+    .login1 {
+        font-size: 24px;
+    }
+
+    .forms {
+        padding: 20px;
+    }
+
+    .login-btn,
+    .signup-link {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
 }
