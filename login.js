@@ -19,6 +19,11 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
   let password = document.querySelector('#logincontainer input[type="password"]').value;
   let rememberCheckbox = document.getElementById('rememberMe');
 
+  let userIn = document.querySelector('#logincontainer input[type="text"]');
+  let passIn = document.querySelector('#logincontainer input[type="password"]');
+  userIn.style.border = "2px solid transparent";
+  passIn.style.border = "2px solid transparent";
+
   //remember me box
  
   if (rememberCheckbox && rememberCheckbox.checked) {
@@ -27,15 +32,48 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
     localStorage.removeItem('savedUsername');
   }
 
+  let registeredUsers = JSON.parse(localStorage.getItem("registeredUser")) || [];
+  if (!Array.isArray(registeredUsers)) registeredUsers = [];
+
+  let foundUser = registeredUsers.find(acc => acc.username === username && acc.password === password);
+
   //admin login
  
   if (username === adminUser && password === adminPass) {
     localStorage.setItem("loggedInUser", username);
     window.location.href = "admin.html";
-  } else {
-     window.location.href = "home.html";
+    return;
+  } 
+
+  if (foundUser) {
+    localStorage.setItem("loggedInUser", username);
+    window.location.href = "home.html";
+    return;
   }
 });
+
+document.querySelector("#signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let username = document.querySelector('#signupcontainer input[type="text"]').value;
+    let password = document.querySelector('#signupcontainer input[type="password"]').value;
+    let email = document.querySelector('#signupcontainer input[type="email"]').value;
+
+    let users = JSON.parse(localStorage.getItem("registeredUser")) || [];
+    if (!Array.isArray(users)) users = [];
+
+    users.push({
+        username: username,
+        password: password,
+        email: email
+    });
+
+    localStorage.setItem("registeredUser", JSON.stringify(users));
+
+    goToLogin();
+});
+
+
 
 //automatically shows the login/sign up page first
 // if (!localStorage.getItem("loggedInUser") &&
