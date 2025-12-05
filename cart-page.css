@@ -25,7 +25,7 @@
     border-radius: 10px;
 }
 body {
-    background: linear-gradient(135deg, hsl(260, 100%, 84%), hsl(217, 90%, 84%), hsl(326, 96%, 80%));
+    background-color: #fff7ff;
     color: #4a4a4a;
     min-height: 100vh;
     display: flex;
