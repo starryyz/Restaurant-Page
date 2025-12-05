@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sugar Cloud Boba Menu</title>
-    <link rel="stylesheet" href="menu.css" />
-
+    <link rel="stylesheet" href="menu.css"/>
+      <link rel="icon" href="Images/Icon.png">
 </head>
+<script>
+let selectedItem = '';
+
+function openPopup(item) {
+    selectedItem = item;
+    document.getElementById('popup-title').innerText = item;
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function addToCart() {
+    alert(selectedItem + ' added to cart!');
+    closePopup();
+}
+</script>
 <body>
 <header>
     <div class="banner-stack">
@@ -21,221 +39,239 @@
 
 <h1 class="section-title">Drinks</h1>
 <div class="menu-grid">
-                <div class="menu-card">
-                <img src="Images/blackMilktea.jpg" alt="Black Milk Tea" />
-                <h3>Black Milk Tea</h3>
-                <p>A smooth and classic brewed black tea mixed with creamy milk for the perfect balance of richness and sweetness.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Black Milk Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/brown-sugar-bubble-tea-12-1024x1536.jpg" alt="Brown Sugar Boba Milk" />
-                <h3>Brown Sugar Boba Milk</h3>
-                <p>Slow-cooked brown sugar syrup swirled with fresh milk and chewy boba for a warm, caramel-sweet flavor.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Brown Sugar Boba Milk')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/creamy-vegan-taro-milk-tea-with-boba-thumb-2.webp" alt="Taro Milk Tea" />
-                <h3>Taro Milk Tea</h3>
-                <p>A dreamy purple blend made with taro root, creamy milk, and just the right hint of vanilla.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Taro Milk Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/thai-milk-tea.jpg" alt="Thai Milk Tea" />
-                <h3>Thai Milk Tea</h3>
-                <p>Bold black tea infused with warm spices and sweetened condensed milk for a rich orange, aromatic drink.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Thai Milk Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/starbucks-iced-matcha-latte-7.jpg" alt="Matcha Green Tea Latte" />
-                <h3>Matcha Green Tea Latte</h3>
-                <p>Smooth Japanese matcha whisked with milk for a vibrant, earthy, and calming green tea latte.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Matcha Green Tea Latte')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/Strawberry-Iced-Tea-EAsy-360x540.jpg" alt="Strawberry Jasmine Tea" />
-                <h3>Strawberry Iced Tea</h3>
-                <p>Floral jasmine tea shaken with real strawberry puree for a refreshing, fruity twist.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Strawberry Jasmine Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/Mango-Green-Tea-Takestwoeggs.jpg" alt="Mango Green Tea" />
-                <h3>Mango Green Tea</h3>
-                <p>Bright tropical mango blended with green tea for a juicy, sweet, and lightly tangy refresher.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Mango Green Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/Homemade-Peach-Iced-Tea-2-1-768x1097.jpg" alt="Peach Oolong Tea" />
-                <h3>Peach Oolong Tea</h3>
-                <p>Fragrant oolong tea combined with ripe peach for a smooth, refreshing fruit-tea flavor.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Peach Oolong Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/honeydew-melon-milk-tea-boba.webp" alt="Honeydew Milk Tea" />
-                <h3>Honeydew Milk Tea</h3>
-                <p>A sweet, creamy blend of fresh honeydew flavor and milk for a cool melon delight.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Honeydew Milk Tea')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/photo-coconut-milk-tea-milky-tea-infused-with-coconut-flavor-toppe-front-view-clean-bg_655090-971812.avif" alt="Coconut Milk Tea" />
-                <h3>Coconut Milk Tea</h3>
-                <p>A silky tropical milk tea made with creamy coconut flavor and soft floral undertones.</p>
-                <span class="price">$6.50</span><br>
-                <button onclick="openPopup('Coconut Milk Tea')">View Options</button>
-            </div>
+    <!-- Drinks Cards -->
+    <div class="menu-card">
+        <img src="Images/blackMilktea.jpg" alt="Black Milk Tea" />
+        <h3>Black Milk Tea</h3>
+        <p>A smooth and classic brewed black tea mixed with creamy milk for the perfect balance of richness and sweetness.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Black Milk Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/brown-sugar-bubble-tea-12-1024x1536.jpg" alt="Brown Sugar Boba Milk" />
+        <h3>Brown Sugar Boba Milk</h3>
+        <p>Slow-cooked brown sugar syrup swirled with fresh milk and chewy boba for a warm, caramel-sweet flavor.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Brown Sugar Boba Milk')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/creamy-vegan-taro-milk-tea-with-boba-thumb-2.webp" alt="Taro Milk Tea" />
+        <h3>Taro Milk Tea</h3>
+        <p>A dreamy purple blend made with taro root, creamy milk, and just the right hint of vanilla.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Taro Milk Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/thai-milk-tea.jpg" alt="Thai Milk Tea" />
+        <h3>Thai Milk Tea</h3>
+        <p>Bold black tea infused with warm spices and sweetened condensed milk for a rich orange, aromatic drink.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Thai Milk Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/starbucks-iced-matcha-latte-7.jpg" alt="Matcha Green Tea Latte" />
+        <h3>Matcha Green Tea Latte</h3>
+        <p>Smooth Japanese matcha whisked with milk for a vibrant, earthy, and calming green tea latte.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Matcha Green Tea Latte')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/Strawberry-Iced-Tea-EAsy-360x540.jpg" alt="Strawberry Jasmine Tea" />
+        <h3>Strawberry Iced Tea</h3>
+        <p>Floral jasmine tea shaken with real strawberry puree for a refreshing, fruity twist.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Strawberry Jasmine Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/Mango-Green-Tea-Takestwoeggs.jpg" alt="Mango Green Tea" />
+        <h3>Mango Green Tea</h3>
+        <p>Bright tropical mango blended with green tea for a juicy, sweet, and lightly tangy refresher.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Mango Green Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/Homemade-Peach-Iced-Tea-2-1-768x1097.jpg" alt="Peach Oolong Tea" />
+        <h3>Peach Oolong Tea</h3>
+        <p>Fragrant oolong tea combined with ripe peach for a smooth, refreshing fruit-tea flavor.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Peach Oolong Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/honeydew-melon-milk-tea-boba.webp" alt="Honeydew Milk Tea" />
+        <h3>Honeydew Milk Tea</h3>
+        <p>A sweet, creamy blend of fresh honeydew flavor and milk for a cool melon delight.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Honeydew Milk Tea')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/photo-coconut-milk-tea-milky-tea-infused-with-coconut-flavor-toppe-front-view-clean-bg_655090-971812.avif" alt="Coconut Milk Tea" />
+        <h3>Coconut Milk Tea</h3>
+        <p>A silky tropical milk tea made with creamy coconut flavor and soft floral undertones.</p>
+        <span class="price">$6.50</span><br>
+        <button onclick="openPopup('Coconut Milk Tea')">View Options</button>
+    </div>
 </div>
 
-<!-- Sandwiches start here -->
 <h1 class="section-title">Sandwiches</h1>
 <div class="menu-grid">
-                <div class="menu-card">
-                <img src="Images/spicyChickenkatsu.webp" alt="Spicy Chicken Katsu Sandwich" />
-                <h3>Spicy Chicken Katsu Sandwich</h3>
-                <p>Crispy fried chicken cutlet coated in spicy seasoning, layered with fresh veggies and creamy house sauce.</p>
-                <span class="price">$11.99</span><br>
-                <button onclick="openPopup('Spicy Chicken Katsu Sandwich')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/honey-hot-chicken-sandwich-1024x1536.jpg" alt="Honey Teriyaki Chicken Sandwich" />
-                <h3>Honey Teriyaki Chicken Sandwich</h3>
-                <p>Juicy grilled chicken glazed in sweet honey-teriyaki sauce served on a toasted bun with crisp greens.</p>
-                <span class="price">$11.99</span><br>
-                <button onclick="openPopup('Honey Teriyaki Chicken Sandwich')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/banh-mi-with-grilled-pork3-1663331872.avif" alt="Classic Banh Mi" />
-                <h3>Classic Banh Mi</h3>
-                <p>A Vietnamese favorite with marinated pork, pickled veggies, fresh cilantro, and tangy house mayo.</p>
-                <span class="price">$11.99</span><br>
-                <button onclick="openPopup('Classic Banh Mi')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/turkey-avocado-sandwich-5-1024x1536.jpg" alt="Turkey Avocado Crunch" />
-                <h3>Turkey Avocado Crunch</h3>
-                <p>Sliced turkey layered with creamy avocado, crispy veggies, and zesty dressing on soft bread.</p>
-                <span class="price">$11.99</span><br>
-                <button onclick="openPopup('Turkey Avocado Crunch')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/capresePestomelt.webp" alt="Caprese Pesto Melt" />
-                <h3>Caprese Pesto Melt</h3>
-                <p>Fresh mozzarella, ripe tomato, and basil pesto toasted together into a melty, savory sandwich.</p>
-                <span class="price">$11.99</span><br>
-                <button onclick="openPopup('Caprese Pesto Melt')">View Options</button>
-            </div>
+    <!-- Sandwich Cards -->
+    <div class="menu-card">
+        <img src="Images/spicyChickenkatsu.webp" alt="Spicy Chicken Katsu Sandwich" />
+        <h3>Spicy Chicken Katsu Sandwich</h3>
+        <p>Crispy fried chicken cutlet coated in spicy seasoning, layered with fresh veggies and creamy house sauce.</p>
+        <span class="price">$11.99</span><br>
+        <button onclick="openPopup('Spicy Chicken Katsu Sandwich')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/honey-hot-chicken-sandwich-1024x1536.jpg" alt="Honey Teriyaki Chicken Sandwich" />
+        <h3>Honey Teriyaki Chicken Sandwich</h3>
+        <p>Juicy grilled chicken glazed in sweet honey-teriyaki sauce served on a toasted bun with crisp greens.</p>
+        <span class="price">$11.99</span><br>
+        <button onclick="openPopup('Honey Teriyaki Chicken Sandwich')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/banh-mi-with-grilled-pork3-1663331872.avif" alt="Classic Banh Mi" />
+        <h3>Classic Banh Mi</h3>
+        <p>A Vietnamese favorite with marinated pork, pickled veggies, fresh cilantro, and tangy house mayo.</p>
+        <span class="price">$11.99</span><br>
+        <button onclick="openPopup('Classic Banh Mi')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/turkey-avocado-sandwich-5-1024x1536.jpg" alt="Turkey Avocado Crunch" />
+        <h3>Turkey Avocado Crunch</h3>
+        <p>Sliced turkey layered with creamy avocado, crispy veggies, and zesty dressing on soft bread.</p>
+        <span class="price">$11.99</span><br>
+        <button onclick="openPopup('Turkey Avocado Crunch')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/capresePestomelt.webp" alt="Caprese Pesto Melt" />
+        <h3>Caprese Pesto Melt</h3>
+        <p>Fresh mozzarella, ripe tomato, and basil pesto toasted together into a melty, savory sandwich.</p>
+        <span class="price">$11.99</span><br>
+        <button onclick="openPopup('Caprese Pesto Melt')">View Options</button>
+    </div>
 </div>
 
-<!-- Soups start here -->
 <h1 class="section-title">Soups</h1>
 <div class="menu-grid">
-                <div class="menu-card">
-                <img src="Images/miso.jpg" alt="Miso Tofu Soup" />
-                <h3>Miso Tofu Soup</h3>
-                <span class="price">$7.50</span><br>
-                <button onclick="openPopup('Miso Tofu Soup')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/Creamy-Corn-Chowder-1.jpg" alt="Creamy Corn Chowder" />
-                <h3>Creamy Corn Chowder</h3>
-                <span class="price">$7.50</span><br>
-                <button onclick="openPopup('Creamy Corn Chowder')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/spicyramen.webp" alt="Spicy Ramen Bowl" />
-                <h3>Spicy Ramen Bowl</h3>
-                <span class="price">$7.50</span><br>
-                <button onclick="openPopup('Spicy Ramen Bowl')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/asian-inspired-ginger-chicken-noodle-soup.webp" alt="Ginger Chicken Noodle Soup" />
-                <h3>Ginger Chicken Noodle Soup</h3>
-                <span class="price">$7.50</span><br>
-                <button onclick="openPopup('Ginger Chicken Noodle Soup')">View Options</button>
-            </div>
-                        <div class="menu-card">
-                <img src="Images/asian-inspired-ginger-chicken-noodle-soup.webp" alt="Ginger Chicken Noodle Soup" />
-                <h3>Ginger Chicken Noodle Soup</h3>
-                <span class="price">$7.50</span><br>
-                <button onclick="openPopup('Ginger Chicken Noodle Soup')">View Options</button>
-            </div>
+    <!-- Soup Cards -->
+    <div class="menu-card">
+        <img src="Images/miso.jpg" alt="Miso Tofu Soup" />
+        <h3>Miso Tofu Soup</h3>
+        <p>A comforting broth made with miso, tofu cubes, seaweed, and scallions for a warm, savory bowl.</p>
+        <span class="price">$7.50</span><br>
+        <button onclick="openPopup('Miso Tofu Soup')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/Creamy-Corn-Chowder-1.jpg" alt="Creamy Corn Chowder" />
+        <h3>Creamy Corn Chowder</h3>
+        <p>A rich, velvety soup filled with sweet corn, diced potatoes, and mild herbs.</p>
+        <span class="price">$7.50</span><br>
+        <button onclick="openPopup('Creamy Corn Chowder')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/spicyramen.webp" alt="Spicy Ramen Bowl" />
+        <h3>Spicy Ramen Bowl</h3>
+        <p>Chewy ramen noodles in a bold, spicy broth with vegetables and savory toppings.</p>
+        <span class="price">$7.50</span><br>
+        <button onclick="openPopup('Spicy Ramen Bowl')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/asian-inspired-ginger-chicken-noodle-soup.webp" alt="Ginger Chicken Noodle Soup" />
+        <h3>Ginger <br>Chicken Noodle Soup</h3>
+        <p>A soothing chicken broth brightened with ginger, tender chicken, veggies, and soft noodles.</p>
+        <span class="price">$7.50</span><br>
+        <button onclick="openPopup('Ginger Chicken Noodle Soup')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/tomyumsoup.jpg" alt="Tom Yum Soup" />
+        <h3>Tom Yum Soup</h3>
+        <p>A spicy and sour Thai broth with lemongrass, lime, chili, and mushrooms.</p>
+        <span class="price">$7.50</span><br>
+        <button onclick="openPopup('Tom Yum Soup')">View Options</button>
+    </div>
 </div>
 
-<!-- Sides start here -->
 <h1 class="section-title">Sides</h1>
 <div class="menu-grid">
-                <div class="menu-card">
-                <img src="Images/sweetPotatoFries.jpg" alt="Sweet Potato Fries" />
-                <h3>Sweet Potato Fries</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('Sweet Potato Fries')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/waffleFries.jpg" alt="Waffle Fries" />
-                <h3>Waffle Fries</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('Waffle Fries')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/takoyaki.jpg" alt="Takoyaki (Octopus Balls)" />
-                <h3>Takoyaki (Octopus Balls)</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('')">Takoyaki (Octopus Balls)</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/spring-rolls-5.webp" alt="Spring Rolls" />
-                <h3>Spring Rolls</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('Spring Rolls')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/edamame.jpg" alt="Edamame" />
-                <h3>Edamame</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('Edamame')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/rice.webp" alt="Rice" />
-                <h3>Rice</h3>
-                <span class="price">$2.50</span><br>
-                <button onclick="openPopup('Rice')">View Options</button>
-            </div>
+    <!-- Side Cards -->
+    <div class="menu-card">
+        <img src="Images/sweetPotatoFries.jpg" alt="Sweet Potato Fries" />
+        <h3>Sweet Potato Fries</h3>
+        <p>Crispy, golden sweet potato fries with a lightly sweet flavor.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Sweet Potato Fries')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/waffleFries.jpg" alt="Waffle Fries" />
+        <h3>Waffle Fries</h3>
+        <p>Perfectly seasoned waffle-cut potatoes fried until crispy and fluffy.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Waffle Fries')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/takoyaki.jpg" alt="Takoyaki (Octopus Balls)" />
+        <h3>Takoyaki (Octopus Balls)</h3>
+        <p>Japanese street-food–style octopus fritters topped with savory sauce and bonito flakes.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Takoyaki (Octopus Balls)')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/spring-rolls-5.webp" alt="Spring Rolls" />
+        <h3>Spring Rolls</h3>
+        <p>Crispy rolls stuffed with seasoned veggies and served with a dipping sauce.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Spring Rolls')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/edamame.jpg" alt="Edamame" />
+        <h3>Edamame</h3>
+        <p>Steamed young soybeans sprinkled with sea salt for a light, protein-packed snack.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Edamame')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/rice.webp" alt="Rice" />
+        <h3>Rice</h3>
+        <p>Fluffy steamed white rice, the perfect simple side for any dish.</p>
+        <span class="price">$2.50</span><br>
+        <button onclick="openPopup('Rice')">View Options</button>
+    </div>
 </div>
 
-<!-- Desserrts start here -->
 <h1 class="section-title">Desserts</h1>
 <div class="menu-grid">
-                <div class="menu-card">
-                <img src="Images/mochi-ice-cream-034.jpg" alt="Mochi Ice Cream" />
-                <h3>Mochi Ice Cream (3 pc)</h3>
-                <span class="price">$3.50</span><br>
-                <button onclick="openPopup('Mochi Ice Cream')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/bubblewafflesundae.jpg" alt="Bubble Waffle Sundae" />
-                <h3>Bubble Waffle Sundae</h3>
-                <span class="price">$3.50</span><br>
-                <button onclick="openPopup('Bubble Waffle Sundae')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/milk-tea-boba-cake.webp" alt="Brown Sugar Milk Tea Cake" />
-                <h3>Brown Sugar Milk Tea Cake</h3>
-                <span class="price">$3.50</span><br>
-                <button onclick="openPopup('Brown Sugar Milk Tea Cake')">View Options</button>
-            </div>
-            <div class="menu-card">
-                <img src="Images/Strawberry-Cheesecake3.jpg" alt="Strawberry Cheesecake Slice" />
-                <h3>Strawberry Cheesecake Slice</h3>
-                <span class="price">$3.50</span><br>
-                <button onclick="openPopup('Brown Sugar Milk Tea Cake')">View Options</button>
+    <!-- Dessert Cards -->
+    <div class="menu-card">
+        <img src="Images/mochi-ice-cream-034.jpg" alt="Mochi Ice Cream" />
+        <h3>Mochi Ice Cream (3 pc)</h3>
+        <p>Chewy mochi filled with soft, creamy ice cream in assorted flavors.</p>
+        <span class="price">$3.50</span><br>
+        <button onclick="openPopup('Mochi Ice Cream')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/bubblewafflesundae.jpg" alt="Bubble Waffle Sundae" />
+        <h3>Bubble Waffle Sundae</h3>
+        <p>A warm bubble waffle topped with ice cream, fruit, and sweet toppings — crunchy outside, fluffy inside.</p>
+        <span class="price">$3.50</span><br>
+        <button onclick="openPopup('Bubble Waffle Sundae')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/milk-tea-boba-cake.webp" alt="Brown Sugar Milk Tea Cake" />
+        <h3>Brown Sugar Milk Tea Cake</h3>
+        <p>A soft, moist cake infused with brown sugar milk tea flavor and drizzled with caramel.</p>
+        <span class="price">$3.50</span><br>
+        <button onclick="openPopup('Brown Sugar Milk Tea Cake')">View Options</button>
+    </div>
+    <div class="menu-card">
+        <img src="Images/Strawberry-Cheesecake3.jpg" alt="Strawberry Cheesecake Slice" />
+        <h3>Strawberry Cheesecake Slice</h3>
+        <p>Creamy classic cheesecake topped with sweet strawberry sauce and fresh berries.</p>
+        <span class="price">$3.50</span><br>
+        <button onclick="openPopup('Strawberry Cheesecake Slice')">View Options</button>
+    </div>
 </div>
+
 <div class="popup-bg" id="popup">
     <div class="popup-box">
         <h3 id="popup-title">Item</h3>
@@ -245,29 +281,12 @@
     </div>
 </div>
 
-<script>
-    let selectedItem = '';
-
-    function openPopup(item) {
-        selectedItem = item;
-        document.getElementById('popup-title').innerText = item;
-        document.getElementById('popup').style.display = 'flex';
-    }
-
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
-    }
-
-    function addToCart() {
-        alert(selectedItem + ' added to cart!');
-        closePopup();
-    }
-</script>
-
-<footer>
-    <button>Return to home page</button>
-    <p id="footer"></p>
-</footer>
+<div class="footer">
+    <div class="footer-container">
+        <p>© Last updated on 12/5/2025</p>
+    </div>
+</div>
 
 </body>
 </html>
+

@@ -1,4 +1,16 @@
 //  SIGN UP AND LOGIN PAGE
+
+function addLog(activity) {
+    let logs = JSON.parse(localStorage.getItem("systemLogs")) || [];
+
+    logs.push({
+        id: logs.length + 1,
+        activity: activity,
+        timestamp: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("systemLogs", JSON.stringify(logs));
+}
 window.addEventListener('load', function() {
   let savedUser = localStorage.getItem('savedUsername');
   if (savedUser) {
@@ -47,7 +59,7 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
 
   if (foundUser) {
     localStorage.setItem("loggedInUser", username);
-    window.location.href = "home.html";
+    window.location.href = "home1.html";
     return;
   }
 });
