@@ -2,22 +2,19 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let total = 0;
 const summaryBox = document.getElementById('orderSummary');
 summaryBox.innerHTML = '';
-
 cart.forEach(item => {
     const p = document.createElement('p');
     p.innerHTML = `
-        <span>${item.name} x${item.quantity}</span>
+        <span>${item.name}${item.size ? " (" + item.size + ")" : ""} x${item.quantity}</span>
         <span>$${(item.price * item.quantity).toFixed(2)}</span>
     `;
     summaryBox.appendChild(p);
 
     total += item.price * item.quantity;
 });
-
 const totalP = document.createElement('p');
 totalP.innerHTML = `<strong>Total</strong><strong>$${total.toFixed(2)}</strong>`;
 summaryBox.appendChild(totalP);
-
 const cardInput = document.getElementById('cardNumber');
 cardInput.addEventListener('input', function(){
     let value = this.value.replace(/\D/g,'').slice(0,5);
@@ -70,7 +67,6 @@ function placeOrder() {
 
     localStorage.setItem('cartForConfirmation', JSON.stringify(cart));
     localStorage.setItem('cartTotal', total.toFixed(2));
-
     localStorage.removeItem('cart');
 
     window.location.href = 'order-confirmation.html';

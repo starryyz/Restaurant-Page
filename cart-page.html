@@ -18,7 +18,6 @@
 
     <ul class="log-nav">
         <li class="outline"><a class="bg" href="login-signup.html">Login</a></li>
-
         <div class="cartIcon-wrapper">
           <a href="cart-page.html">
             <li class="cartIcon shake"><ion-icon name="cart-outline"></ion-icon></li>
@@ -26,12 +25,13 @@
         </div>
     </ul>
 </div>
+
 <div class="menu" id="menuSidebar">
     <h2>Add Ons</h2>
     <input type="text" id="menuSearch" placeholder="Search menu..." class="search-bar">
     
     <div class="menu-items">
-        <div class="item"><span>Upgrade to a Large - $2.79</span><button onclick="addToCart('Large', 2.79)">Add</button></div>
+        <div class="item"><span>Upgrade to Large - $2.79</span><button onclick="addUpgrade()">Add</button></div>
         <div class="item"><span>Whipped Cream - $0.70</span><button onclick="addToCart('Whipped Cream', 0.70)">Add</button></div>
         <div class="item"><span>Honey Syrup - $0.70</span><button onclick="addToCart('Honey Syrup', 0.70)">Add</button></div>
         <div class="item"><span>Double Popping Pearls - $0.70</span><button onclick="addToCart('2x Popping Pearls', 0.70)">Add</button></div>
@@ -63,12 +63,16 @@
     <img src="/Restaurant-Page/Images/logo.png" alt="Your Company Logo" height="150">
 </div>
 
-<footer style="text-align:center; padding: 15px; color:#616161;">
-    <p>&copy; 2025 SCB Properties, Inc. All rights reserved.</p>
-</footer>
+<div class="footer">
+    <div class="footer-container">
+        <strong> © 2025 SCB Properties, Inc. All rights reserved.</strong>
+    </div>
+</div>
+
 <script src="cart.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
 

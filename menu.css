@@ -1,8 +1,11 @@
+
 body {
     cursor: url("Images/2.png"), auto;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     background: #fff7ff;
+    margin: 20;
+    padding: 20;
 }
 
 button:hover {

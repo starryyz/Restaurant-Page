@@ -318,6 +318,20 @@ button, .checkout-btn {
     display: flex;
     justify-content: center;
 }
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    text-align: center;
+}
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    color: #c653b4;
+    font-weight: bold;
+    font-size: 1rem;
+}
 
 @media(max-width: 700px) {
     .menu { width: 220px; }

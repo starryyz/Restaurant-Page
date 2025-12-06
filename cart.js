@@ -1,12 +1,22 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-function addToCart(name, price) {
-    let existing = cart.find(item => item.name === name);
-
-    if (existing) {
-        existing.quantity++;
+function addToCart(name, price = 0, size = "Regular") {
+    if (name === "Drink") {
+        cart.push({ name, size, price: 6.50, quantity: 1 });
+    } else if (name === "Large") {
+        const regularItem = cart.find(item => item.name === "Drink" && item.size === "Regular");
+        if (regularItem) {
+            regularItem.size = "Large";
+            regularItem.price = 6.50 + 2.79;
+        } else {
+            cart.push({ name: "Drink", size: "Large", price: 6.50 + 2.79, quantity: 1 });
+        }
     } else {
-        cart.push({ name, price, quantity: 1 });
+        let existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
     }
 
     saveCart();
@@ -33,7 +43,7 @@ function updateCart() {
             let li = document.createElement('li');
             li.classList.add('cart-item');
             li.innerHTML = `
-                <span>${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</span>
+                <span>${item.name}${item.size ? " (" + item.size + ")" : ""} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</span>
                 <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
             `;
             cartList.appendChild(li);
@@ -48,7 +58,6 @@ function removeItem(index) {
     updateCart();
 }
 
-// MENU SEARCH
 document.getElementById('menuSearch').addEventListener('input', function () {
     const search = this.value.toLowerCase();
     document.querySelectorAll('.menu .menu-items .item').forEach(item => {
@@ -56,10 +65,8 @@ document.getElementById('menuSearch').addEventListener('input', function () {
     });
 });
 
-// CART SEARCH
 document.getElementById('cartSearch').addEventListener('input', updateCart);
 
-// SIDEBAR TOGGLE
 const menu = document.getElementById('menuSidebar');
 const toggleBtn = document.getElementById('menuToggle');
 
@@ -74,8 +81,6 @@ toggleBtn.addEventListener('click', () => {
         toggleBtn.textContent = '⮞';
     }
 });
-
-// INITIAL LOAD
 updateCart();
 
 

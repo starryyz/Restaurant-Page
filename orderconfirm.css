@@ -9,25 +9,32 @@
 body {
     background-image: url(/Restaurant-Page/Images/bg-login7.png);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .confirmation-box {
     background: rgba(255,255,255,0.95);
     padding: 40px;
-    margin: 40px;
+    margin: 20px 0;
     border-radius: 25px;
     width: 90%;
     max-width: 500px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     text-align: center;
+    z-index: 1;
 }
+
 h2 {
     color: #7c5cff;
     margin-bottom: 20px;
 }
+
 #countdownTimer {
     font-size: 2rem;
     font-weight: bold;
@@ -72,4 +79,28 @@ h2 {
 a {
     color: #4a148c;
     text-decoration: underline;
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    color: #c653b4;
+    font-weight: bold;
+    font-size: 1rem;
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    padding: 15px 0;
+  
+}
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+@media (max-height: 600px) {
+    body {
+        justify-content: flex-start;
+        padding-bottom: 60px; 
+    }
 }

@@ -205,8 +205,17 @@ input.invalid {
 .checkout-btn:hover {
     background: #6848df;
 }
-.footer{
-    margin-top: 20px;
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
     text-align: center;
-    height: 100px;
+}
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    color: #c653b4;
+    font-weight: bold;
+    font-size: 1rem;
 }

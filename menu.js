@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmAddBtn.addEventListener('click', addToCartFromPopup);
     }
 });
+
 function openPopup(itemName) {
     selectedItem = itemName;
+
     const cards = document.querySelectorAll('.menu-card');
     let foundPrice = null;
     cards.forEach(card => {
@@ -28,31 +30,44 @@ function openPopup(itemName) {
     selectedPrice = foundPrice !== null ? foundPrice : 0;
 
     if (popupTitle) popupTitle.innerText = itemName;
+
+    // reset size selection
+    document.querySelectorAll("input[name='size']").forEach(r => r.checked = false);
+
     if (popup) popup.style.display = 'flex';
 }
 
 function closePopup() {
     if (popup) popup.style.display = 'none';
 }
+
 function addToCartFromPopup() {
-    if (!selectedItem) {
-        closePopup();
+    const sizeRadio = document.querySelector("input[name='size']:checked");
+    if (!sizeRadio) {
+        alert("Please select a size");
         return;
     }
+    const size = sizeRadio.value;
+
+    let price = selectedPrice;
+    if (size === 'Large') price += 2.49;
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    const exist = cart.find(it => it.name === selectedItem);
+    const exist = cart.find(it => it.name === selectedItem && it.size === size);
 
     if (exist) {
         exist.quantity = (exist.quantity || 1) + 1;
     } else {
         cart.push({
             name: selectedItem,
-            price: selectedPrice || 0,
+            size: size,
+            price: price,
             quantity: 1
         });
     }
+
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(selectedItem + ' added to cart!');
+    alert(selectedItem + " (" + size + ") added to cart!");
     closePopup();
 }
