@@ -10,13 +10,14 @@
 </head>
 
 <body>
-<header>
+
+<div class="background">
+<div class="flexbox-container">
     <div class="banner"></div>
     <div class="header">
         <ul class="header-nav">
             <li class="outline"><a href="home1.html">Home</a></li>
         </ul>
-
         <ul class="log-nav">
             <div class="cartIcon-wrapper">
                 <a href="cart-page.html">
@@ -25,7 +26,7 @@
             </div>
         </ul>
     </div>
-</header>
+
 
 <h1 class="section-title">Boba Milk Tea</h1>
 <div class="menu-grid">
@@ -361,7 +362,7 @@
         <h3>Strawberry Cheesecake Slice</h3>
         <p>Creamy classic cheesecake topped with sweet strawberry sauce and fresh berries.</p>
         <span class="price">$3.50</span><br>
-        <button onclick="openPopup('Strawberry Cheesecake Slice')"></button>
+        <button onclick="openPopup('Strawberry Cheesecake Slice')">Add To Cart</button>
     </div>
 </div>
 <div class="popup-bg" id="popup">
@@ -372,6 +373,11 @@
         <button onclick="closePopup()" style="background:#ccc;color:black;">Cancel</button>
     </div>
 </div>
+
+
+</div>
+</div>
+
 
 <div class="footer">
     <div class="footer-container">

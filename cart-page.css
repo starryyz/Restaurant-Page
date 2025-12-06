@@ -1,16 +1,26 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    cursor: url("Images/2.png"), auto;
+  * {
+overflow-x: hidden;
+cursor: url("Images/2.png"), auto; 
+scrollbar-width: none;     
+-ms-overflow-style: none;  
+}
+.background {
+  display:flex;
+  border-radius:5px;
+  justify-content: center;
+  margin:20px auto;
+  padding:0;
+  background: linear-gradient(#8c75bc, #AD8AE1);
+  width:1310px;
+  height:80rem;
 }
 .banner {
     background-image: url(Images/banner.png);
     background-repeat: no-repeat;
     background-size: 100% auto;
     image-rendering: -webkit-optimize-contrast;
-    width:1455px;
-    height:195px;
+    width:1300px;
+    height:175px;
 }
 .header {
     top:0;
@@ -19,9 +29,9 @@
     z-index:5;
     background-image: url(Images/header.png);
     background-size: 100% auto;
-      image-rendering: crisp-edges;
+    image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    width:1455px;
+    width:1300px;
     height:175px;
 }
 .header-nav:-webkit-scrollbar {
