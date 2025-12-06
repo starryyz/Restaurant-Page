@@ -41,10 +41,10 @@ body {
 .cartIcon {
   transform-origin: center;
   display:flex;
-  font-size: 40px;
+  font-size: 60px;
   margin:2px 20px 20px 20px;
   padding:10px;
-  color:#9F7FCF;
+  color: white;
   filter:
   drop-shadow(1px 1px 0 #9F7FCF)
   drop-shadow(-1px 1px 0 #9F7FCF)

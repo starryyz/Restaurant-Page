@@ -1,3 +1,4 @@
+
 const cart = JSON.parse(localStorage.getItem('cartForConfirmation')) || [];
 const orderItemsContainer = document.getElementById('orderItems');
 
@@ -41,6 +42,37 @@ function updateTimer() {
 
 const timerInterval = setInterval(updateTimer, 1000);
 updateTimer();
+
+const REWARD_THRESHOLD = 100; 
+const previousPoints = parseInt(localStorage.getItem('rewardsPoints')) || 0;
+
+let orderTotalPoints = Math.round(total); 
+let newPoints = previousPoints + orderTotalPoints;
+
+localStorage.setItem('rewardsPoints', newPoints);
+
+const rewardsFill = document.querySelector('.rewards-fill');
+const stars = document.querySelectorAll('.star');
+const rewardsText = document.getElementById('rewards-text');
+
+let fillPercent = Math.min((newPoints / REWARD_THRESHOLD) * 100, 100);
+rewardsFill.style.width = `${fillPercent}%`;
+
+stars.forEach((star, index) => {
+    let starThreshold = (index + 1) * (REWARD_THRESHOLD / stars.length);
+
+    if (newPoints >= starThreshold) {
+        if (!star.classList.contains('filled')) {
+            star.classList.add('filled', 'animate');
+            star.addEventListener('animationend', () => {
+                star.classList.remove('animate');
+            });
+        }
+    }
+});
+
+rewardsText.textContent = `${newPoints} / ${REWARD_THRESHOLD} points`;
+
 
 
 

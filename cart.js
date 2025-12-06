@@ -1,24 +1,25 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-function addToCart(name, price = 0, size = "Regular") {
-    if (name === "Drink") {
-        cart.push({ name, size, price: 6.50, quantity: 1 });
-    } else if (name === "Large") {
-        const regularItem = cart.find(item => item.name === "Drink" && item.size === "Regular");
-        if (regularItem) {
-            regularItem.size = "Large";
-            regularItem.price = 6.50 + 2.79;
-        } else {
-            cart.push({ name: "Drink", size: "Large", price: 6.50 + 2.79, quantity: 1 });
-        }
+
+function addToCart(name, price = 0, size = null) {
+    let existingItem = cart.find(item => item.name === name && item.size === size);
+
+    if (existingItem) {
+        existingItem.quantity++;
     } else {
-        let existing = cart.find(item => item.name === name);
-        if (existing) {
-            existing.quantity++;
-        } else {
-            cart.push({ name, price, quantity: 1 });
-        }
+        cart.push({ name, price, quantity: 1, size });
     }
 
+    saveCart();
+    updateCart();
+}
+function addUpgrade() {
+    let regularDrink = cart.find(item => item.name === "Drink" && (!item.size || item.size === "Regular"));
+    if (regularDrink) {
+        regularDrink.size = "Large";
+        regularDrink.price += 2.79;
+    } else {
+        cart.push({ name: "Drink", size: "Large", price: 6.50 + 2.79, quantity: 1 });
+    }
     saveCart();
     updateCart();
 }
