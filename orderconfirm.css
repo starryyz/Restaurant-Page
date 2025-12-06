@@ -34,6 +34,9 @@ h2 {
     color: #7c5cff;
     margin-bottom: 20px;
 }
+a:hover{
+    cursor: url("Images/1.png"), pointer;
+}
 
 #countdownTimer {
     font-size: 2rem;
@@ -65,14 +68,14 @@ h2 {
     margin-bottom: 40px;
     text-decoration: none;
     color: white;
-    background: #7c5cff;
+    background: #A79FE3;
     padding: 12px 25px;
     border-radius: 12px;
     transition: 0.3s;
 }
 
 .button-link:hover {
-    background: #5a3bc2;
+    background: #E5A9F1;
     cursor: url("Images/1.png"), pointer;
 }
 a {

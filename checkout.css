@@ -154,6 +154,10 @@ body {
 .links a:hover {
     cursor: url("Images/1.png"), pointer;
 }
+
+input:hover{
+    cursor: url("Images/1.png"), pointer;
+}
 .container {
     width: 70%;
     max-width: 900px;
@@ -204,7 +208,7 @@ input.invalid {
 .checkout-btn {
     width: 100%;
     padding: 15px;
-    background: #7c5cff;
+    background: #A79FE3;
     color: white;
     font-size: 18px;
     border: none;
@@ -213,7 +217,7 @@ input.invalid {
     transition: 0.3s;
 }
 .checkout-btn:hover {
-    background: #6848df;
+    background: #E5A9F1;
 }
 .footer {
     width: 100%;

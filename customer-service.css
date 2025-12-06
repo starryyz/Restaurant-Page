@@ -2,7 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    cursor: url("Images/2.png");
+    cursor: url("Images/2.png"), auto;
+    
+}
+body{
+     font-family: 'Courier New', Courier, monospace;
 }
 
 .banner {
@@ -88,22 +92,23 @@
     text-decoration: none;
 }
 
-.hero {
+.cust-serv {
     text-align: center;
     padding: 50px 20px;
     background: #f3e0ff;
     border-radius: 15px;
     margin: 20px auto;
     max-width: 900px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.hero h1 {
+.cust-serv h1 {
     font-size: 3rem;
     color: #d67acb;
     margin-bottom: 15px;
 }
 
-.hero p {
+.cust-serv p {
     font-size: 1.2rem;
 }
 
@@ -114,6 +119,7 @@
     background: #f9e7ff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .contact-form-section h2 {
@@ -126,6 +132,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .contact-form label {
