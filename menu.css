@@ -8,33 +8,97 @@ body {
 button:hover {
     cursor: url("Images/1.png"), pointer;
 }
-
-.banner-stack {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.banner {
+    background-image: url(Images/banner.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    image-rendering: -webkit-optimize-contrast;
+    width:1455px;
+    height:195px;
+}
+.header {
+    top:0;
+    overflow:hidden;
+    position:relative;
+    z-index:5;
+    background-image: url(Images/header.png);
+    background-size: 100% auto;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    width:1455px;
+    height:175px;
 }
 
-.top-banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.cartIcon {
+    transform-origin: center;
+    display:flex;
+    font-size: 40px;
+    margin:2px 20px 20px 20px;
+    padding:10px;
+    color:#9F7FCF;
+    filter:
+        drop-shadow(1px 1px 0 #9F7FCF)
+        drop-shadow(-1px 1px 0 #9F7FCF);
 }
-
-.top-banner img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
+.header-nav:-webkit-scrollbar {
+    display: none;
 }
-
-header img {
-    width: 100%;
-    display: block;
+.header-nav li {
+    padding:0;
+    margin:0;
+    font-family: "Cherry Bomb One", system-ui;
+    float: left;
+    list-style: none;
 }
-
+.log-nav {
+    display:flex;
+    list-style:none;
+    margin: 5px 13px 15px 10px;
+    float: right;
+}
+.log-nav li a {
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+    font-family: "Cherry Bomb One", system-ui;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(#AD8AE1, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:32px;
+    display:flex;
+    margin-right:35px;
+    font-weight:600;
+    display:inline-block;
+    list-style:none;
+    text-decoration: none;
+}
+.header-nav {
+    display:flex;
+    margin: 25px 12px 15px 10px;
+    padding:0;
+    float: left;
+}
+.header-nav li a {
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+    padding-left: 13px;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(#AD8AE1, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:32px;
+    display:flex;
+    margin-right:35px;
+    font-weight:600;
+    display:inline-block;
+    list-style:none;
+    text-decoration: none;
+}
 h1.section-title {
     width: 100%;
     text-align: center;
@@ -60,11 +124,10 @@ h1.section-title {
     overflow: hidden;
     text-align: center;
     padding-bottom: 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
 }
 
 .menu-card img {
@@ -88,7 +151,6 @@ h1.section-title {
     color: #c653b4;
     font-size: 1.1rem;
 }
-
 button {
     width: 120px;
     height: 50px;
@@ -98,23 +160,20 @@ button {
     color: white;
     cursor: pointer;
 }
-
 button:hover {
     background: #E5A9F1;
 }
-
 .popup-bg {
     display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
 }
-
 .popup-box {
     background: white;
     padding: 25px;
@@ -122,20 +181,79 @@ button:hover {
     text-align: center;
     width: 300px;
 }
-
 .footer {
     width: 100%;
     padding: 20px 0;
     display: flex;
     text-align: center;
 }
-
 .footer-container {
-    max-width: 1200px; /* same as your menu grid */
+    max-width: 1200px;
     width: 100%;
-    text-align: center;  /* center text inside container */
+    text-align: center;
     color: #c653b4;
     font-weight: bold;
     font-size: 1rem;
 }
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    padding: 15px 0;
+}
+header ul li a {
+    color: #8a67d6;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+header ul li a:hover {
+    color: #b79aff;
+    text-shadow: 0px 0px 8px rgba(182, 149, 255, 0.7);
+    transform: scale(1.05);
+}
+.outline {
+  filter:
+    drop-shadow(1px 1px 0 #9F7FCF)
+    drop-shadow(-1px 1px 0 #9F7FCF)
+    drop-shadow(1px -1px 0 #9F7FCF)
+    drop-shadow(-1px -1px 0 #9F7FCF)
+    drop-shadow(1.6px 1.6px 0 #9F7FCF)
+    drop-shadow(-1.5px 2px 0 #9F7FCF)
+    drop-shadow(1.5px -2px 0 #9F7FCF)
+    drop-shadow(-1.5px -1.5px 0 #9F7FCF);
+}
+.gradient {
+  background: linear-gradient(#c1bdc7, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.darkerOutline {
+  filter:
+    drop-shadow(1px 1px 0 #7651ad)
+    drop-shadow(-1px 1px 0 #7651ad)
+    drop-shadow(1px -1px 0 #7651ad)
+    drop-shadow(-1px -1px 0 #7651ad)
+    drop-shadow(1.6px 1.6px 0 #7651ad)
+    drop-shadow(-1.5px 2px 0 #7651ad)
+    drop-shadow(1.5px -2px 0 #7651ad)
+    drop-shadow(-1.5px -1.5px 0 #7651ad);
+}
+.darkerOutline2 {
+  filter:
+    drop-shadow(1px 1px 0 #5c3992)
+    drop-shadow(-1px 1px 0 #5c3992)
+    drop-shadow(1px -1px 0 #5c3992)
+    drop-shadow(-1px -1px 0 #5c3992)
+    drop-shadow(1.6px 1.6px 0 #5c3992)
+    drop-shadow(-1.5px 2px 0 #5c3992)
+    drop-shadow(1.5px -2px 0 #5c3992)
+    drop-shadow(-1.5px -1.5px 0 #5c3992);
+}
 
+.cart.p {
+    font-family:'Cherry Bomb One', system-ui;
+}

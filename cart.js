@@ -12,6 +12,7 @@ function addToCart(name, price) {
     saveCart();
     updateCart();
 }
+
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
@@ -24,7 +25,8 @@ function updateCart() {
     cartList.innerHTML = '';
     let total = 0;
 
-    cart.filter(item => item.name.toLowerCase().includes(search))
+    cart
+        .filter(item => item.name.toLowerCase().includes(search))
         .forEach((item, index) => {
             total += item.price * item.quantity;
 
@@ -46,6 +48,7 @@ function removeItem(index) {
     updateCart();
 }
 
+// MENU SEARCH
 document.getElementById('menuSearch').addEventListener('input', function () {
     const search = this.value.toLowerCase();
     document.querySelectorAll('.menu .menu-items .item').forEach(item => {
@@ -53,15 +56,17 @@ document.getElementById('menuSearch').addEventListener('input', function () {
     });
 });
 
+// CART SEARCH
 document.getElementById('cartSearch').addEventListener('input', updateCart);
 
+// SIDEBAR TOGGLE
 const menu = document.getElementById('menuSidebar');
 const toggleBtn = document.getElementById('menuToggle');
 
 toggleBtn.addEventListener('click', () => {
     menu.classList.toggle('open');
 
-    if(menu.classList.contains('open')) {
+    if (menu.classList.contains('open')) {
         toggleBtn.classList.remove('closed');
         toggleBtn.textContent = '⮜';
     } else {
@@ -70,5 +75,7 @@ toggleBtn.addEventListener('click', () => {
     }
 });
 
+// INITIAL LOAD
 updateCart();
+
 

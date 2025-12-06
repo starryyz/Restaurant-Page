@@ -12,23 +12,20 @@
     image-rendering: -webkit-optimize-contrast;
     width:1455px;
     height:195px;
-    }
-
-    /* Header Section Style (comes with nav) */
-    .header {
+}
+.header {
     top:0;
     overflow:hidden;
     position:relative;
     z-index:5;
     background-image: url(Images/header.png);
     background-size: 100% auto;
-      image-rendering: crisp-edges;
+    image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     width:1455px;
     height:175px;
-    }
-
-    .outline {
+}
+.outline {
   filter:
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
@@ -38,95 +35,80 @@
     drop-shadow(-1.5px 2px 0 #9F7FCF)
     drop-shadow(1.5px -2px 0 #9F7FCF)
     drop-shadow(-1.5px -1.5px 0 #9F7FCF);
-}
-
-    /* Cart Icon but for header */
-    .cartIcon {
-       transform-origin: center;
-      display:flex;
-      font-size: 40px;
-      margin:2px 20px 20px 20px;
-      padding:10px;
-      color:#9F7FCF;
-      filter:
+} 
+.cartIcon {
+    transform-origin: center;
+    display:flex;
+    font-size: 40px;
+    margin:2px 20px 20px 20px;
+    padding:10px;
+    color:#9F7FCF;
+filter:
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
-    }
-
-      .header-nav:-webkit-scrollbar {
-      display: none;
-      }
-
-      /* Nav for Login and Cart Sec */
-      .header-nav li {
-        padding:0;
-        margin:0;
+}
+.header-nav:-webkit-scrollbar {
+    display: none;
+}
+.header-nav li {
+    padding:0;
+    margin:0;
     font-family: "Cherry Bomb One", system-ui;
     float: left;
     list-style: none;
-    
-    }
-
-    /* Login and Cart Sec */
-    .log-nav {
-        font-family:'Cherry Bomb One',system-ui;
-        display:flex;
-        list-style:none;
-        margin: 5px 13px 15px 10px;
-        float: right;
-    }
-
- /* Login and Cart Sec */
-    .log-nav li a {
-        line-height: 1.2;
-        position: relative; 
-        z-index: 2;  
-        font-family: "Cherry Bomb One", system-ui;
-        padding: 10px;
-         transition: transform 0.3s ease-in-out;
-         background: linear-gradient(#AD8AE1, #ffffff);
-        -webkit-background-clip: text;
-        background-clip: text;
-         color: transparent;
-        font-size:32px;
-        display:flex;
-        margin-right:35px;
-        font-weight:600;
-        display:inline-block;
-        list-style:none;
-        text-decoration: none;
-    }
-
-      /* Navigation Sec */
-    .header-nav {
-        display:flex;
-         font-family:'Cherry Bomb One',system-ui;
-        margin: 25px 12px 15px 10px; 
-       padding:0;
-        float: left;
-    }
-
-    /* Navigation */
-    .header-nav li a {
-        font-family:'Cherry Bomb One',system-ui;
-        position: relative; 
-        z-index: 1;
-        line-height: 1.2;  
-        padding-left: 13px;
-         transition: transform 0.3s ease-in-out;
-         background: linear-gradient(#AD8AE1, #ffffff);
-        -webkit-background-clip: text;
-        background-clip: text;
-         color: transparent;
-        font-size:32px;
-        display:flex;
-        margin-right:35px;
-        font-weight:600;
-        display:inline-block;
-        list-style:none;
-        text-decoration: none;
-    }
-  
+}
+.log-nav {
+    font-family:'Cherry Bomb One',system-ui;
+    display:flex;
+    list-style:none;
+    margin: 5px 13px 15px 10px;
+    float: right;
+}
+.log-nav li a {
+    line-height: 1.2;
+    position: relative; 
+    z-index: 2;  
+    font-family: "Cherry Bomb One", system-ui;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(#AD8AE1, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:32px;
+    display:flex;
+    margin-right:35px;
+    font-weight:600;
+    display:inline-block;
+    list-style:none;
+    text-decoration: none;
+}
+.header-nav {
+    display:flex;
+    font-family:'Cherry Bomb One',system-ui;
+    margin: 25px 12px 15px 10px; 
+    padding:0;
+    float: left;
+}
+.header-nav li a {
+    font-family:'Cherry Bomb One',system-ui;
+    position: relative; 
+    z-index: 1;
+    line-height: 1.2;  
+    padding-left: 13px;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(#AD8AE1, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size:32px;
+    display:flex;
+    margin-right:35px;
+    font-weight:600;
+    display:inline-block;
+    list-style:none;
+    text-decoration: none;
+}
 .back-btn{
     border: none;
     border-radius: 12px;
