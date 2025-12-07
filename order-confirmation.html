@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation</title>
-    <link rel="stylesheet" href="orderconfirm.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="orderconfirm.css">
+  <link rel="icon" href="Images/Icon.png">
 </head>
 <body>
-    <div class="rewards-container">
-        <h3>Your Rewards Progress</h3>
-        <div class="rewards-bar">
-            <div class="rewards-fill"></div>
-            <div class="stars">
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-            </div>
-        </div>
-        <p id="rewards-text">0 / 100 points</p>
-    </div>
 
-    <div class="confirmation-box">
-        <div class="logo">
-            <img src="/Restaurant-Page/Images/logo.png" height="150px" alt="Site Logo">
-        </div>
+<div class="confirmation-box">
+  <div class="logo">
+      <img src="/Restaurant-Page/Images/logo.png" height="150px" alt="Site Logo">
+  </div>
 
-        <h2>Thank You for Your Order!</h2>
-        <h4>Please Pick up Items within:</h4>
+  <h2>Thank You for Your Order!</h2>
+  <h4>Your order will be ready in:</h4>
+  <h3 id="countdownTimer">15:00</h3>
 
-        <h3 id="countdownTimer"><strong>15:00</strong></h3>
+  <div id="orderItems"></div>
+  <div class="total" id="orderTotal"></div>
 
-        <div id="orderItems"></div>
-        <div class="total" id="orderTotal"></div>
+  <a href="menu.html" class="button-link">Back to Menu</a>
 
-        <a href="menu.html" class="button-link">Back to Menu</a>
+  <div class="link">
+    <p>See an Issue?</p>
+    <a href="customer-service.html">Contact Support</a>
+  </div>
+</div>
 
-        <div class="link">
-            <p>See an Issue?</p>
-            <a href="customer-service.html">Contact Support</a>
-        </div>
-    </div>
+<div class="footer">
+  <div class="footer-container">
+    <strong>© 2025 SCB Properties, Inc. All rights reserved.</strong>
+  </div>
+</div>
 
-    <div class="footer">
-        <div class="footer-container">
-            <strong>© 2025 SCB Properties, Inc. All rights reserved.</strong>
-        </div>
-    </div>
-
-    <script src="order-confirm.js"></script>
+<script src="order-confirm.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

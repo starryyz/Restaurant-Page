@@ -1,14 +1,18 @@
+// menu.js (updated)
 let selectedItem = '';
 let selectedPrice = 0;
 const popup = document.getElementById('popup');
 const popupTitle = document.getElementById('popup-title');
 const confirmAddBtn = document.getElementById('confirmAddBtn');
+const cartCounter = document.getElementById('cartCounter');
 
 document.addEventListener('DOMContentLoaded', () => {
     if (confirmAddBtn) {
         confirmAddBtn.addEventListener('click', addToCartFromPopup);
     }
+    updateCartCounter();
 });
+
 function openPopup(itemName) {
     selectedItem = itemName;
     const cards = document.querySelectorAll('.menu-card');
@@ -34,11 +38,13 @@ function openPopup(itemName) {
 function closePopup() {
     if (popup) popup.style.display = 'none';
 }
+
 function addToCartFromPopup() {
     if (!selectedItem) {
         closePopup();
         return;
     }
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const exist = cart.find(it => it.name === selectedItem);
@@ -52,7 +58,22 @@ function addToCartFromPopup() {
             quantity: 1
         });
     }
+
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(selectedItem + ' added to cart!');
+    updateCartCounter();
     closePopup();
 }
+
+function updateCartCounter() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+    if (cartCounter) {
+        cartCounter.innerText = total;
+
+        // Pulse animation
+        cartCounter.classList.remove('pulse');
+        void cartCounter.offsetWidth; // trigger reflow
+        cartCounter.classList.add('pulse');
+    }
+}
+

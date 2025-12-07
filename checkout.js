@@ -1,6 +1,12 @@
+// checkout.js (updated)
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let total = 0;
 const summaryBox = document.getElementById('orderSummary');
+
+function getPendingReward() {
+    return JSON.parse(localStorage.getItem('pendingReward')) || null;
+}
+
 summaryBox.innerHTML = '';
 cart.forEach(item => {
     const p = document.createElement('p');
@@ -13,32 +19,51 @@ cart.forEach(item => {
     total += item.price * item.quantity;
 });
 const totalP = document.createElement('p');
-totalP.innerHTML = `<strong>Total</strong><strong>$${total.toFixed(2)}</strong>`;
+totalP.innerHTML = `<strong>Subtotal</strong><strong>$${total.toFixed(2)}</strong>`;
 summaryBox.appendChild(totalP);
+
+// Show pending reward in checkout summary
+const pending = getPendingReward();
+let discount = 0;
+if (pending && pending.applied !== true) {
+    discount = parseFloat(pending.discountAmount || 0);
+    const discP = document.createElement('p');
+    discP.innerHTML = `<strong>Reward Discount</strong><strong>-$${discount.toFixed(2)}</strong>`;
+    summaryBox.appendChild(discP);
+}
+
+const finalTotalP = document.createElement('p');
+finalTotalP.innerHTML = `<strong>Total</strong><strong>$${Math.max(total - discount, 0).toFixed(2)}</strong>`;
+summaryBox.appendChild(finalTotalP);
+
 const cardInput = document.getElementById('cardNumber');
-cardInput.addEventListener('input', function(){
-    let value = this.value.replace(/\D/g,'').slice(0,5);
-    let formatted = value;
-    if(value.length > 2){
-        formatted = value.slice(0,2) + '-' + value.slice(2,4);
-        if(value.length === 5) formatted += '-' + value.slice(4);
-    }
-    this.value = formatted;
-});
-
+if (cardInput) {
+    cardInput.addEventListener('input', function(){
+        let value = this.value.replace(/\D/g,'').slice(0,5);
+        let formatted = value;
+        if(value.length > 2){
+            formatted = value.slice(0,2) + '-' + value.slice(2,4);
+            if(value.length === 5) formatted += '-' + value.slice(4);
+        }
+        this.value = formatted;
+    });
+}
 const expInput = document.getElementById('expDate');
-expInput.addEventListener('input', function(){
-    let value = this.value.replace(/\D/g,'').slice(0,4);
-    if(value.length > 2){
-        value = value.slice(0,2) + '/' + value.slice(2);
-    }
-    this.value = value;
-});
-
+if (expInput) {
+    expInput.addEventListener('input', function(){
+        let value = this.value.replace(/\D/g,'').slice(0,4);
+        if(value.length > 2){
+            value = value.slice(0,2) + '/' + value.slice(2);
+        }
+        this.value = value;
+    });
+}
 const cvvInput = document.getElementById('cvv');
-cvvInput.addEventListener('input', function(){
-    this.value = this.value.replace(/\D/g,'').slice(0,3);
-});
+if (cvvInput) {
+    cvvInput.addEventListener('input', function(){
+        this.value = this.value.replace(/\D/g,'').slice(0,3);
+    });
+}
 
 function placeOrder() {
     const street = document.getElementById('street');
@@ -48,28 +73,52 @@ function placeOrder() {
 
     let valid = true;
 
-    [street, city, state, zip, cardInput, expInput, cvvInput].forEach(field =>
-        field.classList.remove('invalid')
-    );
+    [street, city, state, zip, cardInput, expInput, cvvInput].forEach(field => {
+        if (field) field.classList.remove('invalid');
+    });
 
     [street, city, state, zip].forEach(field => {
-        if(field.value.trim() === '') {
+        if(field && field.value.trim() === '') {
             field.classList.add('invalid');
             valid = false;
         }
     });
 
-    if(cardInput.value.length < 7) { cardInput.classList.add('invalid'); valid = false; }
-    if(expInput.value.length < 5) { expInput.classList.add('invalid'); valid = false; }
-    if(cvvInput.value.length < 3) { cvvInput.classList.add('invalid'); valid = false; }
+    if(cardInput && cardInput.value.length < 7) { cardInput.classList.add('invalid'); valid = false; }
+    if(expInput && expInput.value.length < 5) { expInput.classList.add('invalid'); valid = false; }
+    if(cvvInput && cvvInput.value.length < 3) { cvvInput.classList.add('invalid'); valid = false; }
 
     if(!valid) return;
 
-    localStorage.setItem('cartForConfirmation', JSON.stringify(cart));
-    localStorage.setItem('cartTotal', total.toFixed(2));
+    const pendingReward = getPendingReward();
+    const appliedReward = (pendingReward && pendingReward.applied !== true) ? pendingReward : null;
+    const discountAmount = appliedReward ? parseFloat(appliedReward.discountAmount || 0) : 0;
+
+    const totalPaid = Math.max(total - discountAmount, 0);
+
+    // pass cart and totalPaid to order confirmation
+    const cartForConfirmation = {
+        items: cart,
+        subtotal: total,
+        discount: discountAmount,
+        totalPaid: totalPaid,
+        appliedReward: appliedReward ? { name: appliedReward.name, cost: appliedReward.cost } : null
+    };
+
+    // Save order to be shown on confirmation
+    localStorage.setItem('cartForConfirmation', JSON.stringify(cartForConfirmation));
+    localStorage.setItem('cartTotal', totalPaid.toFixed(2));
+
+    // Remove cart and mark reward as applied so it isn't used again
     localStorage.removeItem('cart');
+    if (appliedReward) {
+        // mark as applied in redeemedRewards (we record the redemption at redemption time already)
+        appliedReward.applied = true;
+        localStorage.setItem('pendingReward', JSON.stringify(appliedReward));
+    }
 
     window.location.href = 'order-confirmation.html';
 }
 
-document.querySelector('.checkout-btn').addEventListener('click', placeOrder);
+const checkoutBtn = document.querySelector('.checkout-btn');
+if (checkoutBtn) checkoutBtn.addEventListener('click', placeOrder);

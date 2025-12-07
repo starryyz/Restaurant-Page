@@ -1,77 +1,68 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const timerDisplay = document.getElementById("countdownTimer");
+    const orderItemsContainer = document.getElementById("orderItems");
+    const orderTotalEl = document.getElementById("orderTotal");
 
-const cart = JSON.parse(localStorage.getItem('cartForConfirmation')) || [];
-const orderItemsContainer = document.getElementById('orderItems');
+    // Get saved order
+    const order = JSON.parse(localStorage.getItem("cartForConfirmation"));
 
-let total = 0;
-
-cart.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'order-item';
-    div.innerHTML = `
-        <span>${item.name} x${item.quantity}</span>
-        <span>$${(item.price * item.quantity).toFixed(2)}</span>
-    `;
-    orderItemsContainer.appendChild(div);
-
-    total += item.price * item.quantity;
-});
-
-document.getElementById('orderTotal').textContent =
-    `Total Paid: $${total.toFixed(2)}`;
-
-localStorage.removeItem('cartForConfirmation');
-localStorage.removeItem('cartTotal');
-
-let countdownTime = 15 * 60;
-const timerDisplay = document.getElementById("countdownTimer");
-
-function updateTimer() {
-    let minutes = Math.floor(countdownTime / 60);
-    let seconds = countdownTime % 60;
-
-    timerDisplay.textContent =
-        `${minutes}:${seconds.toString().padStart(2, "0")}`;
-
-    if (countdownTime > 0) {
-        countdownTime--;
-    } else {
-        clearInterval(timerInterval);
-        timerDisplay.textContent = "Expired";
+    if (!order) {
+        orderItemsContainer.innerHTML = "<p>No order found.</p>";
+        orderTotalEl.textContent = "";
+        return;
     }
-}
 
-const timerInterval = setInterval(updateTimer, 1000);
-updateTimer();
+    // Display each item
+    order.items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "order-item";
+        div.innerHTML = `
+            <span>${item.name}${item.size ? " (" + item.size + ")" : ""} x${item.quantity}</span>
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        `;
+        orderItemsContainer.appendChild(div);
+    });
 
-const REWARD_THRESHOLD = 100; 
-const previousPoints = parseInt(localStorage.getItem('rewardsPoints')) || 0;
+    // Display subtotal, discount, and total
+    const subtotalDiv = document.createElement("div");
+    subtotalDiv.className = "order-item";
+    subtotalDiv.innerHTML = `<span>Subtotal</span><span>$${order.subtotal.toFixed(2)}</span>`;
+    orderItemsContainer.appendChild(subtotalDiv);
 
-let orderTotalPoints = Math.round(total); 
-let newPoints = previousPoints + orderTotalPoints;
+    if (order.discount > 0) {
+        const discountDiv = document.createElement("div");
+        discountDiv.className = "order-item";
+        discountDiv.innerHTML = `<span>Discount</span><span>-$${order.discount.toFixed(2)}</span>`;
+        orderItemsContainer.appendChild(discountDiv);
+    }
 
-localStorage.setItem('rewardsPoints', newPoints);
+    const totalDiv = document.createElement("div");
+    totalDiv.className = "total";
+    totalDiv.innerHTML = `Total Paid: $${order.totalPaid.toFixed(2)}`;
+    orderTotalEl.appendChild(totalDiv);
 
-const rewardsFill = document.querySelector('.rewards-fill');
-const stars = document.querySelectorAll('.star');
-const rewardsText = document.getElementById('rewards-text');
+    // Clear the stored order so it doesn't persist
+    localStorage.removeItem("cartForConfirmation");
+    localStorage.removeItem("cartTotal");
 
-let fillPercent = Math.min((newPoints / REWARD_THRESHOLD) * 100, 100);
-rewardsFill.style.width = `${fillPercent}%`;
+    // Countdown timer
+    let countdownTime = 15 * 60;
+    const timerInterval = setInterval(() => {
+        const minutes = Math.floor(countdownTime / 60);
+        const seconds = countdownTime % 60;
+        timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2,"0")}`;
 
-stars.forEach((star, index) => {
-    let starThreshold = (index + 1) * (REWARD_THRESHOLD / stars.length);
-
-    if (newPoints >= starThreshold) {
-        if (!star.classList.contains('filled')) {
-            star.classList.add('filled', 'animate');
-            star.addEventListener('animationend', () => {
-                star.classList.remove('animate');
-            });
+        if (countdownTime <= 0) {
+            clearInterval(timerInterval);
+            timerDisplay.textContent = "Ready!";
+        } else {
+            countdownTime--;
         }
-    }
+    }, 1000);
 });
 
-rewardsText.textContent = `${newPoints} / ${REWARD_THRESHOLD} points`;
+
+
 
 
 
