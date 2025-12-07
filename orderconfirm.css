@@ -24,11 +24,6 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
-h2 { color: #7c5cff; margin-bottom: 10px; }
-h4 { margin-bottom: 15px; }
-#countdownTimer { font-size: 2rem; font-weight: bold; color: #2d087c; margin-bottom: 15px; }
-=======
 h2 {
     color: #7c5cff;
     margin-bottom: 20px;
@@ -43,7 +38,6 @@ a:hover{
     color: #2d087c;
     margin-bottom: 15px;
 }
->>>>>>> 1a86db74d2bb77023ab3e76be439f41904e8575e
 
 .order-item {
   display: flex;
@@ -63,20 +57,6 @@ a:hover{
 }
 
 .button-link {
-<<<<<<< HEAD
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: white;
-  background: #7c5cff;
-  padding: 12px 25px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.button-link:hover { 
-    background: #5a3bc2; cursor: pointer; 
-=======
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 40px;
@@ -95,7 +75,6 @@ a:hover{
 a {
     color: #4a148c;
     text-decoration: underline;
->>>>>>> 1a86db74d2bb77023ab3e76be439f41904e8575e
 }
 
 a { color: #4a148c; text-decoration: underline; }
