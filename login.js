@@ -52,12 +52,14 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
   //admin login
  
   if (username === adminUser && password === adminPass) {
+    addLog("Admin logged in");//logs
     localStorage.setItem("loggedInUser", username);
     window.location.href = "admin.html";
     return;
   } 
 
   if (foundUser) {
+    addLog(`User logged in: ${username}`);//logs
     localStorage.setItem("loggedInUser", username);
     window.location.href = "home1.html";
     return;
@@ -81,6 +83,7 @@ document.querySelector("#signupForm").addEventListener("submit", function(e) {
     });
 
     localStorage.setItem("registeredUser", JSON.stringify(users));
+    addLog(`New account created: ${username}`);//logs
 
     goToLogin();
 });
