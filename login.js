@@ -88,10 +88,10 @@ document.querySelector("#signupForm").addEventListener("submit", function(e) {
 
 
 //automatically shows the login/sign up page first
-// if (!localStorage.getItem("loggedInUser") &&
-//     !window.location.pathname.includes("login-signup.html")) {
-//   window.location.href = "login-signup.html";
-// }
+if (!localStorage.getItem("loggedInUser") &&
+    !window.location.pathname.includes("login-signup.html")) {
+  window.location.href = "login-signup.html";
+}
 
 function goToSignup() {
   document.getElementById("logincontainer").style.display = "none";
