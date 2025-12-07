@@ -67,14 +67,14 @@
 </div>
 
     <script>
-        const chatbotBody = document.getElementById('chatbot-body');
+        let chatbotBody = document.getElementById('chatbot-body');
 
-        const conversation = [
+        let conversation = [
             {
                 message: "Hi! I'm SugarBot. What can I help you with today?",
                 options: [
                     { text: "Order Status", response: "To check your order, please provide your order number." },
-                    { text: "Menu Questions", response: "We have a variety of drinks, desserts, and snacks. What would you like to know?" },
+                    { text: "Menu Questions", response: "We have a variety of drinks, desserts, and sides. What would you like to know?" },
                     { text: "Other Questions", response: "Sure! Tell me a bit more about your question." }
                 ]
             },
@@ -88,61 +88,70 @@
             {
                 message: "Do you want tips on our most popular drinks?",
                 options: [
-                    { text: "Yes", response: "Our Brown Sugar Boba Milk and Taro Milk Tea are customer favorites!" },
+                    { text: "Yes", response: "Our Sugar Cloud Milk and Taro Milk Tea are customer favorites!" },
                     { text: "No", response: "No problem! Let me know if you have another question." }
                 ]
             }
         ];
 
-        let step = 0;
+    let step = 0;
 
-        function addBotMessage(text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.classList.add('bot-message');
-            msgDiv.textContent = text;
-            chatbotBody.appendChild(msgDiv);
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    function addBotMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('bot-message');
+        msgDiv.textContent = text;
+        chatbotBody.appendChild(msgDiv);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function addUserMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('user-message');
+        msgDiv.textContent = text;
+        chatbotBody.appendChild(msgDiv);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function displayOptions(options) {
+        const optionsDiv = document.createElement('div');
+        optionsDiv.classList.add('options-container');
+
+        options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.classList.add('option-btn');
+            btn.textContent = opt.text;
+            btn.onclick = () => handleOption(opt);
+            optionsDiv.appendChild(btn);
+        });
+
+        chatbotBody.appendChild(optionsDiv);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    function handleOption(option) {
+        addUserMessage(option.text);
+
+        const optionContainers = document.querySelectorAll('.options-container');
+        optionContainers.forEach(el => el.remove());
+
+        setTimeout(() => addBotMessage(option.response), 500);
+
+        step++;
+
+        if (conversation[step]) {
+            setTimeout(() => {
+
+                addBotMessage(conversation[step].message);   
+
+                displayOptions(conversation[step].options);
+            }, 1000);
+        } else {
+            setTimeout(() => addBotMessage("Thank you for chatting with me! Refresh to start again."), 1000);
         }
+    }
 
-        function addUserMessage(text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.classList.add('user-message');
-            msgDiv.textContent = text;
-            chatbotBody.appendChild(msgDiv);
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
-        }
-
-        function displayOptions(options) {
-            const optionsDiv = document.createElement('div');
-            optionsDiv.classList.add('options-container');
-
-            options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.classList.add('option-btn');
-                btn.textContent = opt.text;
-                btn.onclick = () => handleOption(opt);
-                optionsDiv.appendChild(btn);
-            });
-
-            chatbotBody.appendChild(optionsDiv);
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
-        }
-
-        function handleOption(option) {
-            addUserMessage(option.text);
-            const optionContainers = document.querySelectorAll('.options-container');
-            optionContainers.forEach(el => el.remove());
-            setTimeout(() => addBotMessage(option.response), 500);
-
-            step++;
-            if (conversation[step]) {
-                setTimeout(() => displayOptions(conversation[step].options), 1000);
-            } else {
-                setTimeout(() => addBotMessage("Thank you for chatting with me! Refresh to start again."), 1000);
-            }
-        }
-
-        displayOptions(conversation[step].options);
+    addBotMessage(conversation[step].message);  
+    displayOptions(conversation[step].options);
     </script>
 </body>
 </html>
