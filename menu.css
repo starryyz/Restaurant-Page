@@ -12,7 +12,9 @@ body {
     padding: 0;
     background: #fff7ff;
 }
-
+.outline a:hover{
+    cursor: url("Images/1.png"), pointer;
+}
 .background {
     display:flex;
     border-radius:5px;
@@ -28,7 +30,6 @@ body {
 button:hover {
     cursor: url("Images/1.png"), pointer;
 }
-
 .banner {
     background-image: url(Images/banner.png);
     background-repeat: no-repeat;
