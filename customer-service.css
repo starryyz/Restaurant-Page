@@ -1,12 +1,32 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    cursor: url("Images/2.png"), auto;
-    
+  * {
+overflow-x: hidden;
+cursor: url("Images/2.png"), auto; 
+scrollbar-width: none;     
+-ms-overflow-style: none;  
 }
-body{
-     font-family: 'Courier New', Courier, monospace;
+
+body {
+    cursor: url("Images/2.png"), auto;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background: #fff7ff;
+}
+
+.background {
+    display:flex;
+    border-radius:5px;
+    justify-content: center;
+    margin:20px auto;
+    padding:0;
+    background: linear-gradient(#8c75bc, #AD8AE1);
+    width:1310px;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+button:hover {
+    cursor: url("Images/1.png"), pointer;
 }
 
 .banner {
@@ -14,82 +34,58 @@ body{
     background-repeat: no-repeat;
     background-size: 100% auto;
     image-rendering: -webkit-optimize-contrast;
-    width:1455px;
-    height:195px;
+    width:1300px;
+    height:175px;
+    font-family: "Cherry Bomb One", system-ui;
 }
+
 .header {
     top:0;
-    overflow:hidden;
+
     position:relative;
     z-index:5;
     background-image: url(Images/header.png);
     background-size: 100% auto;
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    width:1455px;
-    height:175px;
-}
-.header-nav:-webkit-scrollbar {
-    display: none;
-}
-.header-nav li {
-    padding:0;
-    margin:0;
+    width:1300px;
+    height:90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: "Cherry Bomb One", system-ui;
-    float: left;
-    list-style: none;
 }
-.header-nav li :hover{
-    cursor: url("Images/1.png"), pointer;
-}
+
+.header-nav,
 .log-nav {
-    display:flex;
-    list-style:none;
-    margin: 5px 13px 15px 10px;
-    float: right;
-}
-.log-nav li a {
-    line-height: 1.2;
-    position: relative; 
-    z-index: 2;  
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
     font-family: "Cherry Bomb One", system-ui;
-    padding: 10px;
+}
+
+.header-nav li a,
+.log-nav li a {
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+    padding-left: 13px;
     transition: transform 0.3s ease-in-out;
     background: linear-gradient(#AD8AE1, #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-size:32px;
-    display:flex;
     margin-right:35px;
     font-weight:600;
-    display:inline-block;
-    list-style:none;
     text-decoration: none;
 }
-.header-nav {
-    display:flex;
-    margin: 25px 12px 15px 10px; 
-    padding:0;
-    float: left;
-}
-.header-nav li a {
-    position: relative; 
-    z-index: 1;
-    line-height: 1.2;  
-    padding-left: 13px;
-    transition: transform 0.3s ease-in-out;
-    background: linear-gradient(#AD8AE1, #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-        color: transparent;
-    font-size:32px;
-    display:flex;
-    margin-right:35px;
-    font-weight:600;
-    display:inline-block;
-    list-style:none;
-    text-decoration: none;
+
+.header-nav li a:hover,
+.log-nav li a:hover {
+    transform: scale(1.05);
 }
 
 .cust-serv {
@@ -192,7 +188,7 @@ body{
 .chatbot-container {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 60px;
     width: 320px;
     background: #f9e7ff;
     border-radius: 20px;
@@ -318,32 +314,108 @@ header ul li a:hover {
     drop-shadow(1.5px -2px 0 #9F7FCF)
     drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
-.gradient {
-    background: linear-gradient(#c1bdc7, #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.darkerOutline {
-filter:
-    drop-shadow(1px 1px 0 #7651ad)
-    drop-shadow(-1px 1px 0 #7651ad)
-    drop-shadow(1px -1px 0 #7651ad)
-    drop-shadow(-1px -1px 0 #7651ad)
-    drop-shadow(1.6px 1.6px 0 #7651ad)
-    drop-shadow(-1.5px 2px 0 #7651ad)
-    drop-shadow(1.5px -2px 0 #7651ad)
-    drop-shadow(-1.5px -1.5px 0 #7651ad);
-    }
 
-.darkerOutline2 {
-filter:
-    drop-shadow(1px 1px 0 #5c3992)
-    drop-shadow(-1px 1px 0 #5c3992)
-    drop-shadow(1px -1px 0 #5c3992)
-    drop-shadow(-1px -1px 0 #5c3992)
-    drop-shadow(1.6px 1.6px 0 #5c3992)
-    drop-shadow(-1.5px 2px 0 #5c3992)
-    drop-shadow(1.5px -2px 0 #5c3992)
-    drop-shadow(-1.5px -1.5px 0 #5c3992);
-    }
+#sugarbot-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #d8b3ff, #f7d7ff);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 32px;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+#sugarbot-toggle:hover {
+    transform: scale(1.1);
+    cursor: url("Images/1.png"), pointer;
+}
+
+#sugarbot-box {
+    position: fixed;
+    bottom: 110px;
+    right: 25px;
+    width: 310px;
+    height: 420px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: 0.35s ease;
+    z-index: 9998;
+}
+
+#sugarbot-box.open {
+    transform: scale(1);
+}
+
+.sugarbot-header {
+    background: #cfa8ff;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border-bottom: 3px solid #e8d5ff;
+}
+
+#sugarbot-messages {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    background: #faf3ff;
+}
+
+.bot-message {
+    background: #d6c4ff;
+    color: #4a2e6b;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    width: fit-content;
+    max-width: 85%;
+    font-size: 15px;
+}
+
+.button-row {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.bubble-btn {
+    background: #f7d8ff;
+    color: #6f3a84;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.bubble-btn:hover {
+    background: #eecaff;
+    transform: scale(1.05);
+}
+
+.sugarbot-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    background: #f3e6ff;
+    color: #7a5a92;
+}
+
+

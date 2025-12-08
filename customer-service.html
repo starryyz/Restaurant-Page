@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugar Cloud Boba - Customer Service</title>
         <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="customer-service.css">\
+    <link rel="stylesheet" href="customer-service.css">
     <link rel="icon" href="Images/Icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<<<<<<< HEAD
 <div class="banner"></div> 
 
 
 <div class="header">
+=======
+<div class="background">
+<div class="flexbox-container">
+    <div class="banner"></div>
+ <div class="header">
+>>>>>>> 3b7fef37db419b2994219548d0233983950dc03b
     <ul class="header-nav">
-        <li class="outline"><a href="order-confirmation.html">Exit</a></li>
         <li class="outline"><a href="home1.html">Home</a></li>
-    </ul>
-
-    <ul class="log-nav">
-        <div class="cartIcon-wrapper">
-          <a href="cart-page.html">
-           
-          </a>
-        </div>
     </ul>
 </div>
 
@@ -52,107 +53,86 @@
         <p>Yes! SugarBot can guide you through refund requests. Click the chatbot to start the process.</p>
     </div>
 </section>
+</div>
+</div>
 
+<div id="sugarbot-toggle">
+    <span>⭐</span>
+</div>
 
-    <div class="chatbot-container" id="chatbot">
-        <div class="chatbot-header">SugarBot!</div>
-        <div class="chatbot-body" id="chatbot-body">
-            <div class="bot-message">Hi! I'm SugarBot. What can I help you with today?</div>
+<div id="sugarbot-box">
+
+    <div class="sugarbot-header">
+        SugarBot
+    </div>
+
+    <div id="sugarbot-messages">
+        <div class="bot-message">
+            Hi! I'm SugarBot — tap a bubble to get help!
+        </div>
+
+        <div class="button-row">
+            <button class="bubble-btn" onclick="sugarReply('track')">Track my order</button>
+            <button class="bubble-btn" onclick="sugarReply('hours')">Store hours</button>
+            <button class="bubble-btn" onclick="sugarReply('support')">Contact support</button>
         </div>
     </div>
 
-  <div class="footer">
+    <div class="sugarbot-footer">
+        <small>Click a bubble to continue</small>
+    </div>
+</div>
+
+<div class="footer">
     <div class="footer-container">
         <strong> © 2025 SCB Properties, Inc. All rights reserved.</strong>
     </div>
 </div>
 
-    <script>
-        let chatbotBody = document.getElementById('chatbot-body');
+<script>
 
-        let conversation = [
-            {
-                message: "Hi! I'm SugarBot. What can I help you with today?",
-                options: [
-                    { text: "Order Status", response: "To check your order, please provide your order number." },
-                    { text: "Menu Questions", response: "We have a variety of drinks, desserts, and sides. What would you like to know?" },
-                    { text: "Other Questions", response: "Sure! Tell me a bit more about your question." }
-                ]
-            },
-            {
-                message: "Would you like to speak to a live agent or continue with me?",
-                options: [
-                    { text: "Live Agent", response: "Okay! Please wait, a representative will assist you shortly." },
-                    { text: "Continue with SugarBot", response: "Great! I'm happy to help you further." }
-                ]
-            },
-            {
-                message: "Do you want tips on our most popular drinks?",
-                options: [
-                    { text: "Yes", response: "Our Sugar Cloud Milk and Taro Milk Tea are customer favorites!" },
-                    { text: "No", response: "No problem! Let me know if you have another question." }
-                ]
-            }
-        ];
+const toggleBtn = document.getElementById("sugarbot-toggle");
+const botBox = document.getElementById("sugarbot-box");
 
-    let step = 0;
+toggleBtn.onclick = () => {
+    botBox.classList.toggle("open");
+};
 
-    function addBotMessage(text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.classList.add('bot-message');
-        msgDiv.textContent = text;
-        chatbotBody.appendChild(msgDiv);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+function sugarReply(type) {
+    const msgBox = document.getElementById("sugarbot-messages");
+
+    let response = "";
+
+    if (type === "track") {
+        response = `
+            <div class="bot-message">
+                To track your order, check your confirmation email.
+            </div>
+        `;
     }
 
-    function addUserMessage(text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.classList.add('user-message');
-        msgDiv.textContent = text;
-        chatbotBody.appendChild(msgDiv);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    if (type === "hours") {
+        response = `
+            <div class="bot-message">
+                Our store hours are 10 AM – 10 PM daily!
+            </div>
+        `;
     }
 
-    function displayOptions(options) {
-        const optionsDiv = document.createElement('div');
-        optionsDiv.classList.add('options-container');
-
-        options.forEach(opt => {
-            const btn = document.createElement('button');
-            btn.classList.add('option-btn');
-            btn.textContent = opt.text;
-            btn.onclick = () => handleOption(opt);
-            optionsDiv.appendChild(btn);
-        });
-
-        chatbotBody.appendChild(optionsDiv);
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    if (type === "support") {
+        response = `
+            <div class="bot-message">
+                For support, email us at: support@sugarcloudboba.com
+            </div>
+        `;
     }
 
-    function handleOption(option) {
-        addUserMessage(option.text);
+    msgBox.insertAdjacentHTML("beforeend", response);
 
-        const optionContainers = document.querySelectorAll('.options-container');
-        optionContainers.forEach(el => el.remove());
+    msgBox.scrollTop = msgBox.scrollHeight;
 
-        setTimeout(() => addBotMessage(option.response), 500);
+}
+</script>
 
-        step++;
-
-        if (conversation[step]) {
-            setTimeout(() => {
-
-                addBotMessage(conversation[step].message);   
-
-                displayOptions(conversation[step].options);
-            }, 1000);
-        } else {
-            setTimeout(() => addBotMessage("Thank you for chatting with me! Refresh to start again."), 1000);
-        }
-    }
-
-    addBotMessage(conversation[step].message);  
-    displayOptions(conversation[step].options);
-    </script>
 </body>
 </html>
