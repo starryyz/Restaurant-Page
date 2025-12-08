@@ -1,38 +1,5 @@
-// class SystemLog {
-//     constructor(logId, activity, timestamp) {
-//         this.logId = logId;       
-//         this.activity = activity;
-//         this.timestamp = timestamp; 
-//     }
-
-//     printLog() {
-//         console.log(`${this.timestamp}: ${this.activity}`);
-//     }
-// }
-
-// // Example: store logs in an array
-// let logs = [];
-
-// // Function to add a log entry
-// function addLog(activity) {
-//     let logId = logs.length + 1;
-//     let timestamp = new Date().toISOString(); // current date/time
-//     let logEntry = new SystemLog(logId, activity, timestamp);
-//     logs.push(logEntry);
-//     logEntry.printLog(); // optional: print to console
-// }
-
-// function placeOrder(customerId, orderId) {
-//     // code to place the order...
-//     addLog(`Customer ${customerId} placed order #${orderId}`);
-// }
-
-// function addMenuItem(adminId, itemName) {
-//     // code to add menu item...
-//     addLog(`Admin ${adminId} added new menu item '${itemName}'`);
-// }
-
-let MAX_DAYS = 30;
+//nobody touch this i was abt to pull my hair out doing this
+let MAX_DAYS = 30; //max amount of days the logs are kept in
 function cleanOldLogs() {
     let logs = JSON.parse(localStorage.getItem("systemLogs")) || [];
     let now = Date.now();
@@ -55,7 +22,7 @@ function displayLogs() {
 
     logs.forEach(log => {
         let entry = `
-            <div class="logEntry  "adminLog" : "userLog"}">
+            <div class="logEntry">
                 <div class="timestamp">${log.timestamp}</div>
                 <div>${log.activity}</div>
             </div>

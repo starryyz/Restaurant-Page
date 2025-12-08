@@ -238,6 +238,9 @@ body{
     border-radius: 15px;
     align-self: flex-end;
 }
+a:hover{
+    cursor: url("Images/1.png"), pointer;
+}
 
 .options-container {
     display: flex;

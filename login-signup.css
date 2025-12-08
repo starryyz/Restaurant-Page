@@ -28,13 +28,11 @@
     padding-right: 50px;    
 }
 .web-title{
-    align-self: flex-start;
-    font-family:  "Shadows Into Light";
-    text-align: center;
-    margin-right: 80px;
-    font-size: 75px;
-    margin-top: 55px;
-    color: #471656;
+    width: 450px;      
+    position: relative;
+    left: -60px;      
+    margin-top: -250px;  
+    display: block;
 }
 
 input{
