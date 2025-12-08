@@ -10,7 +10,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    background: #fff7ff;
+    background: white;
 }
 .outline a:hover{
     cursor: url("Images/1.png"), pointer;
@@ -37,12 +37,10 @@ button:hover {
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
-    font-family: "Cherry Bomb One", system-ui;
 }
 
 .header {
     top:0;
-
     position:relative;
     z-index:5;
     background-image: url(Images/header.png);
@@ -54,7 +52,6 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Cherry Bomb One", system-ui;
 }
 
 .header-nav,
@@ -64,7 +61,6 @@ button:hover {
     padding: 0;
     margin: 0;
     align-items: center;
-    font-family: "Cherry Bomb One", system-ui;
 }
 
 .header-nav li a,
@@ -127,7 +123,7 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
-
+/* Pulse animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.5); }
@@ -243,7 +239,7 @@ button:hover {
     font-size: 1rem;
 }
 
-
+/* Optional text outlines */
 .outline {
     filter:
         drop-shadow(1px 1px 0 #9F7FCF)
