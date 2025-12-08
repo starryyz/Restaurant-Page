@@ -314,7 +314,7 @@ header ul li a:hover {
     drop-shadow(1.5px -2px 0 #9F7FCF)
     drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
-=
+
 #sugarbot-toggle {
     position: fixed;
     bottom: 25px;
@@ -335,6 +335,7 @@ header ul li a:hover {
 
 #sugarbot-toggle:hover {
     transform: scale(1.1);
+    cursor: url("Images/1.png"), pointer;
 }
 
 #sugarbot-box {
@@ -391,6 +392,7 @@ header ul li a:hover {
     flex-wrap: wrap;
     gap: 8px;
 }
+
 
 .bubble-btn {
     background: #f7d8ff;
