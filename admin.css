@@ -6,7 +6,9 @@
 }
 
 body{
-    background-color: rgb(87, 64, 109);
+    background: linear-gradient(#8c75bc, #AD8AE1);
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFF;
 }
 
 .top-banner {
@@ -41,11 +43,10 @@ button{
     height: 250px;
     padding: 15px;
     margin-bottom: 25px;
-    border: 2px solid #ccc;
     border-radius: 8px;
-    background: #f7f7f7;
+    background: #1f062940;
     overflow-y: scroll;
-    font-family: Arial, sans-serif;
+    scrollbar-width: none;
 }
 
 .logEntry {
