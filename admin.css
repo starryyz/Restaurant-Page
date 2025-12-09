@@ -9,7 +9,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    background: white;
+    background: linear-gradient(#8c75bc, #AD8AE1);
 }
 .outline a:hover{
     cursor: url("Images/1.png"), pointer;
@@ -90,21 +90,20 @@ button{
     margin: 10px;
 }
 h3{
-    margin-left: 350px;
-    font-size: 30px;
+    color: #FFFF;
+    font-size: 25px;
 }
 .logBox {
-    display: flex;
-    justify-self: center;
+    display: block;
     width: 90%;
     max-width: 600px;
-    height: 350px;
+    height: 300px;
     padding: 15px;
-    margin-bottom: 25px;
     border-radius: 8px;
     background: #1f062940;
     overflow-y: scroll;
     scrollbar-width: none;
+    color: #FFFF;
 }
 
 .logEntry {
@@ -130,46 +129,7 @@ h3{
 footer {
   margin:0;
   padding:0;
-  background-color: #8c75bc;
   padding: 10px;
   padding-top:60px;
   font-size: 80%;
 }
-.footer {
-  margin:0;
-  padding:0;
-}
-footer {
-  background-color: #333;
-  padding: 20px;
-  padding-top:60px;
-  font-size: 80%;
-}
-.footer p {
-  color: #aaaaaa;
-}
-.footer-nav li {
-  float: left;
-  list-style: none;
-}
-.social-links li {
-  float: right;
-  list-style: none;
-}
-.social-links {
-  list-style: none;
-  float: right;
-}
-.footer-nav li a {
-  font-size:18px;
-  display:flex;
-  float:left;
-  font-weight:300;
-  text-decoration: none;
-  color:#888888;
-  margin: 0 10px;
-  padding:1px 5px;
-    cursor: url("Images/1.png"), pointer;
-}
-
-
