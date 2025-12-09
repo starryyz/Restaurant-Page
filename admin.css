@@ -220,15 +220,15 @@ h3{
 
 
 .navButtonWrapper {
-    filter:
-        drop-shadow(1px 1px 0 #9F7FCF)
-        drop-shadow(-1px 1px 0 #9F7FCF)
-        drop-shadow(1px -1px 0 #9F7FCF)
-        drop-shadow(-1px -1px 0 #9F7FCF)
-        drop-shadow(1.6px 1.6px 0 #9F7FCF)
-        drop-shadow(-1.5px 2px 0 #9F7FCF)
-        drop-shadow(1.5px -2px 0 #9F7FCF)
-        drop-shadow(-1.5px -1.5px 0 #9F7FCF);
+filter:
+    drop-shadow(1px 1px 0 #9F7FCF)
+    drop-shadow(-1px 1px 0 #9F7FCF)
+    drop-shadow(1px -1px 0 #9F7FCF)
+    drop-shadow(-1px -1px 0 #9F7FCF)
+    drop-shadow(1.6px 1.6px 0 #9F7FCF)
+    drop-shadow(-1.5px 2px 0 #9F7FCF)
+    drop-shadow(1.5px -2px 0 #9F7FCF)
+    drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
 .outline{
      filter:

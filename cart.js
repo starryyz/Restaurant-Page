@@ -1,4 +1,3 @@
-// cart.js (updated)
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price = 0, size = null) {
@@ -40,7 +39,6 @@ function getPendingReward() {
 
 function clearPendingReward() {
     localStorage.removeItem("pendingReward");
-    // keep redeemedRewards history intact
 }
 
 function updateCart() {
@@ -68,7 +66,6 @@ function updateCart() {
             cartList.appendChild(li);
         });
 
-    // Apply pending reward if exists
     const pending = getPendingReward();
     let discount = 0;
     if (pending && pending.applied !== true) {
@@ -78,7 +75,6 @@ function updateCart() {
     let total = Math.max(subtotal - discount, 0);
     totalEl.textContent = total.toFixed(2);
 
-    // Show reward summary in cart UI (optional element #rewardSummary)
     const rewardSummary = document.getElementById('rewardSummary');
     if (rewardSummary) {
         if (pending && pending.applied !== true) {
@@ -96,8 +92,6 @@ function updateCart() {
             rewardSummary.innerHTML = '';
         }
     }
-
-    // ensure cart counter uses menu's function or local update
     const cartCounter = document.getElementById('cartCounter');
     if (cartCounter) {
         const count = cart.reduce((s, it) => s + (it.quantity || 0), 0);
@@ -140,8 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // When cart page loads, update cart and show pending reward if any
     updateCart();
 });
 

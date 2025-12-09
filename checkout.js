@@ -1,4 +1,3 @@
-// checkout.js (updated)
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let total = 0;
 const summaryBox = document.getElementById('orderSummary');
@@ -22,7 +21,6 @@ const totalP = document.createElement('p');
 totalP.innerHTML = `<strong>Subtotal</strong><strong>$${total.toFixed(2)}</strong>`;
 summaryBox.appendChild(totalP);
 
-// Show pending reward in checkout summary
 const pending = getPendingReward();
 let discount = 0;
 if (pending && pending.applied !== true) {
@@ -96,7 +94,6 @@ function placeOrder() {
 
     const totalPaid = Math.max(total - discountAmount, 0);
 
-    // pass cart and totalPaid to order confirmation
     const cartForConfirmation = {
         items: cart,
         subtotal: total,
@@ -105,14 +102,12 @@ function placeOrder() {
         appliedReward: appliedReward ? { name: appliedReward.name, cost: appliedReward.cost } : null
     };
 
-    // Save order to be shown on confirmation
     localStorage.setItem('cartForConfirmation', JSON.stringify(cartForConfirmation));
     localStorage.setItem('cartTotal', totalPaid.toFixed(2));
 
-    // Remove cart and mark reward as applied so it isn't used again
     localStorage.removeItem('cart');
     if (appliedReward) {
-        // mark as applied in redeemedRewards (we record the redemption at redemption time already)
+
         appliedReward.applied = true;
         localStorage.setItem('pendingReward', JSON.stringify(appliedReward));
     }

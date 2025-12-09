@@ -70,9 +70,8 @@ function updateCartCounter() {
     if (cartCounter) {
         cartCounter.innerText = total;
 
-        // Pulse animation
         cartCounter.classList.remove('pulse');
-        void cartCounter.offsetWidth; // trigger reflow
+        void cartCounter.offsetWidth; 
         cartCounter.classList.add('pulse');
     }
 }

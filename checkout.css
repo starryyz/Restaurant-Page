@@ -101,7 +101,6 @@ filter:
     padding:0;
     float: left;
 }
-
 a[href="cart-page.html"] {
   display: inline-block;
   transition: transform 0.2s ease;
