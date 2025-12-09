@@ -34,6 +34,7 @@ button:hover {
     background-image: url(Images/banner.png);
     background-repeat: no-repeat;
     background-size: 100% auto;
+    margin: auto;
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
@@ -42,6 +43,7 @@ button:hover {
 .header {
     top:0;
     position:relative;
+    margin: auto;
     z-index:5;
     background-image: url(Images/header.png);
     background-size: 100% auto;
@@ -59,8 +61,16 @@ button:hover {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-bottom:30px;
     align-items: center;
+}
+a[href="home1.html"] {
+  display: inline-block;
+}
+
+a[href="home1.html"]:hover {
+  transform: scale(1.1);
+  cursor: url("Images/1.png"), pointer;
 }
 
 .header-nav li a,
@@ -75,7 +85,7 @@ button:hover {
     background-clip: text;
     color: transparent;
     font-size:32px;
-    margin-right:35px;
+    margin: 20px 35px 10px 10px;
     font-weight:600;
     text-decoration: none;
 }
@@ -86,13 +96,14 @@ button:hover {
 }
 
 .cartIcon-wrapper {
+    padding:20px;
     position: relative;
     display: flex;
     align-items: center;
 }
 
 .cartIcon {
-    margin-right: 100px;
+    margin-bottom:20px;
     transform-origin: center;
     font-size: 60px;
     color:white;
@@ -106,9 +117,9 @@ button:hover {
 }
 
 .cart-counter {
-    margin-right:100px ;
+    margin: -10px 1px 10px 1px;
     position: absolute;
-    right: -10px;
+    right: 6px;
     background: hwb(316 55% 4%);
     color: white;
     font-weight: bold;
@@ -241,10 +252,14 @@ button:hover {
 
 /* Optional text outlines */
 .outline {
-    filter:
-        drop-shadow(1px 1px 0 #9F7FCF)
-        drop-shadow(-1px 1px 0 #9F7FCF)
-        drop-shadow(1px -1px 0 #9F7FCF)
-        drop-shadow(-1px -1px 0 #9F7FCF);
+    font-family:'Cherry Bomb One', system-ui;
+  filter:
+    drop-shadow(1px 1px 0 #9F7FCF)
+    drop-shadow(-1px 1px 0 #9F7FCF)
+    drop-shadow(1px -1px 0 #9F7FCF)
+    drop-shadow(-1px -1px 0 #9F7FCF)
+    drop-shadow(1.6px 1.6px 0 #9F7FCF)
+    drop-shadow(-1.5px 2px 0 #9F7FCF)
+    drop-shadow(1.5px -2px 0 #9F7FCF)
+    drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
-
