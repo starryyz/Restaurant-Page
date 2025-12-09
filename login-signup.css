@@ -25,13 +25,13 @@
     display: inline-flex;
     justify-content: flex-end; 
     align-items: center;       
-    padding-right: 50px;    
+    padding-right: 110px;    
 }
 .web-title{
-    width: 450px;      
+    width: 500px;      
     position: relative;
-    left: -60px;      
-    margin-top: -250px;  
+    left: -200px;      
+    margin-top: -400px;  
     display: block;
 }
 
