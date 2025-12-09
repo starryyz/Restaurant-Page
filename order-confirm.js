@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderItemsContainer = document.getElementById("orderItems");
     const orderTotalEl = document.getElementById("orderTotal");
 
-    // Get saved order
     const order = JSON.parse(localStorage.getItem("cartForConfirmation"));
 
     if (!order) {
@@ -11,8 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         orderTotalEl.textContent = "";
         return;
     }
-
-    // Display each item
     order.items.forEach(item => {
         const div = document.createElement("div");
         div.className = "order-item";
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         orderItemsContainer.appendChild(div);
     });
 
-    // Display subtotal, discount, and total
     const subtotalDiv = document.createElement("div");
     subtotalDiv.className = "order-item";
     subtotalDiv.innerHTML = `<span>Subtotal</span><span>$${order.subtotal.toFixed(2)}</span>`;
@@ -41,11 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     totalDiv.innerHTML = `Total Paid: $${order.totalPaid.toFixed(2)}`;
     orderTotalEl.appendChild(totalDiv);
 
-    // Clear the stored order so it doesn't persist
     localStorage.removeItem("cartForConfirmation");
     localStorage.removeItem("cartTotal");
 
-    // Countdown timer
     let countdownTime = 15 * 60;
     const timerInterval = setInterval(() => {
         const minutes = Math.floor(countdownTime / 60);
