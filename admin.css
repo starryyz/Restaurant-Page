@@ -79,6 +79,8 @@ button:hover {
 .log-nav li a:hover {
     transform: scale(1.05);
 }
+
+
 button{
     font-family: "Cherry Bomb One", system-ui;
     font-size: 70px;
@@ -88,6 +90,7 @@ button{
 h3{
     color: #FFFF;
     font-size: 25px;
+    margin-left: 20px;
 }
 .logBox {
     display: block;
@@ -112,8 +115,41 @@ h3{
     font-size: 12px;
     opacity: 0.7;
 }
-.outline {
+.navButton {
+    background: none;
+    border: none;
+    cursor: url("Images/2.png"), auto;
+    font-family: "Cherry Bomb One", system-ui;
+    font-size: 32px;
+    font-weight: 600;
+    margin-right: 35px;
+    padding-left: 13px;
+    background: linear-gradient(#AD8AE1, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navButton:hover {
+    transform: scale(1.05);
+    cursor: url("Images/1.png"), pointer;
+}
+
+
+.navButtonWrapper {
     filter:
+        drop-shadow(1px 1px 0 #9F7FCF)
+        drop-shadow(-1px 1px 0 #9F7FCF)
+        drop-shadow(1px -1px 0 #9F7FCF)
+        drop-shadow(-1px -1px 0 #9F7FCF)
+        drop-shadow(1.6px 1.6px 0 #9F7FCF)
+        drop-shadow(-1.5px 2px 0 #9F7FCF)
+        drop-shadow(1.5px -2px 0 #9F7FCF)
+        drop-shadow(-1.5px -1.5px 0 #9F7FCF);
+}
+.outline{
+     filter:
     drop-shadow(1px 1px 0 #9F7FCF)
     drop-shadow(-1px 1px 0 #9F7FCF)
     drop-shadow(1px -1px 0 #9F7FCF)
