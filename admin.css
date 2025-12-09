@@ -79,10 +79,6 @@ button:hover {
 .log-nav li a:hover {
     transform: scale(1.05);
 }
-.options{
-    display: flex;
-    justify-content: flex-start;
-}
 button{
     font-family: "Cherry Bomb One", system-ui;
     font-size: 70px;
@@ -104,8 +100,9 @@ h3{
     overflow-y: scroll;
     scrollbar-width: none;
     color: #FFFF;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
-
 .logEntry {
     padding: 6px;
     border-bottom: 1px solid #ddd;
@@ -126,10 +123,14 @@ h3{
     drop-shadow(1.5px -2px 0 #9F7FCF)
     drop-shadow(-1.5px -1.5px 0 #9F7FCF);
 }
-footer {
-  margin:0;
-  padding:0;
-  padding: 10px;
-  padding-top:60px;
-  font-size: 80%;
+.footer {
+  width: 100%;
+  text-align: center;
+  color: #471656; 
+  font-size: 0.9rem;
+  padding: 15px 0;
+  position: absolute;
+  /* bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);  */
 }
