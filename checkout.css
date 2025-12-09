@@ -22,6 +22,7 @@
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
+    font-family: "Cherry Bomb One", system-ui;
 }
 .header {
     top:0;
@@ -34,6 +35,7 @@
     image-rendering: -webkit-optimize-contrast;
     width:1300px;
     height:175px;
+    font-family: "Cherry Bomb One", system-ui;
 }
 .outline {
   filter:
