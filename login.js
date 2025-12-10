@@ -61,7 +61,7 @@ document.querySelector('.login-form').addEventListener('submit', function(e) {
   if (foundUser) {
     addLog(`User logged in: ${username}`);//logs
     localStorage.setItem("loggedInUser", username);
-    window.location.href = "home1.html";
+    window.location.href = "home.html";
     return;
   }
 });
