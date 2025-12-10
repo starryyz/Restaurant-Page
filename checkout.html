@@ -20,7 +20,6 @@
             <li  class="outline"><a href="cart-page.html">Back</a></li>
         </ul>
     <ul class="log-nav">
-
          <div class="cartIcon-wrapper"><a href="cart-page.html">
           <li class="cartIcon shake"><ion-icon name="cart-outline"></ion-icon></li>
          </div></a>
@@ -42,17 +41,36 @@
                     <div class="section">
                             <h3>Order Summary</h3>
                         <div class="summary-box" id="orderSummary"></div>
-                    </div>
-                        <div class="section">
-                            <h3>Payment Method</h3>
-                            <label>Card Number</label>
-                            <input type="text" placeholder="12-34-5" id="cardNumber" maxlength="7">
-                            <label>Expiration Date</label>
-                            <input type="text" placeholder="MM/YY" id="expDate" maxlength="5">
-                            <label>CVV</label>
-                            <input type="text" placeholder="123" id="cvv" maxlength="3">
-                        </div>
-                <button class="checkout-btn">Place Order</button>
+                    </div>    
+
+      <div class="section">
+            <h3>Payment Method</h3>
+            <div class="payment-icons">
+                <div class="payment-option" id="visaOption">
+                    <img src="/Restaurant-Page/Images/visa.png" alt="Visa">
+                </div>
+
+                 <div class="payment-option" id="mastercard">
+                    <img src="/Restaurant-Page/Images/master.svg" alt="MasterCard">
+                </div>
+                <div class="payment-option" id="applePayOption">
+                    <img src="/Restaurant-Page/Images/apple.png" alt="Apple Pay">
+                </div>
+            </div>
+
+        <div id="cardInfoSection">
+            <label>Card Number</label>
+            <input id="cardNumber" placeholder="12-34-5" maxlength="7">
+
+            <label>Expiration Date</label>
+            <input id="expDate" placeholder="MM/YY" maxlength="5">
+
+            <label>CVV</label>
+            <input id="cvv" placeholder="123" maxlength="3">
+        </div>
+        </div>
+
+        <button class="checkout-btn" id="placeOrderBtn">Place Order</button>
             </div>
                  <div class="logo">
                     <img src="/Restaurant-Page/Images/logo.png" height="150px" alt="Site Logo" class="logo">

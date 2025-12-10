@@ -12,7 +12,7 @@ scrollbar-width: none;
   padding:0;
   background: linear-gradient(#8c75bc, #AD8AE1);
   width:1310px;
-  height:80rem;
+  height:50rem;
 }
 .banner {
     background-image: url(Images/banner.png);
@@ -97,7 +97,7 @@ scrollbar-width: none;
     text-decoration: none;
 }
 body {
-    background-color: #fff7ff;
+    background-color: white;
     color: #4a4a4a;
     min-height: 100vh;
     display: flex;

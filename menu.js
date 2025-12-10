@@ -1,4 +1,3 @@
-// menu.js (updated)
 let selectedItem = '';
 let selectedPrice = 0;
 const popup = document.getElementById('popup');

@@ -134,7 +134,6 @@ a[href="home1.html"]:hover {
     transition: transform 0.3s ease;
 }
 
-/* Pulse animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.5); }
@@ -250,7 +249,6 @@ button:hover {
     font-size: 1rem;
 }
 
-/* Optional text outlines */
 .outline {
     font-family:'Cherry Bomb One', system-ui;
   filter:
