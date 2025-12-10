@@ -9,7 +9,7 @@
 }
 .flexbox-container {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 5px auto;
   padding:0;
 }  
