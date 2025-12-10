@@ -34,5 +34,43 @@ function displayLogs() {
     allBox.innerHTML = allHTML || "<p>No logs.</p>";
 }
 
+function currentOrders() {
+    let box = document.getElementById("ordersBox");
+
+    box.style.display = box.style.display === "none" ? "block" : "none";
+
+    if (box.style.display === "block") {
+        displayOrders();
+    }
+}
+
+function displayOrders() {
+    let orders = JSON.parse(localStorage.getItem("customerOrders")) || [];
+    let box = document.getElementById("ordersBox");
+
+    if (!orders.length) {
+        box.innerHTML = "<p>No customer orders.</p>";
+        return;
+    }
+
+    let html = "";
+    orders.forEach(order => {
+        html += `
+            <div class="logEntry">
+                <div class="timestamp">${order.timestamp}</div>
+                <div><strong>Items:</strong></div>
+                ${order.items.map(i => `
+                    <div> - ${i.quantity}× ${i.name}${i.size ? " ("+i.size+")" : ""}</div>
+                `).join("")}
+                <div><strong>Subtotal:</strong> $${order.subtotal.toFixed(2)}</div>
+                <div><strong>Discount:</strong> $${order.discount.toFixed(2)}</div>
+                <div><strong>Total Paid:</strong> $${order.totalPaid.toFixed(2)}</div>
+            </div>
+        `;
+    });
+
+    box.innerHTML = html;
+}
+
 setInterval(displayLogs, 3000);
 window.addEventListener("load", displayLogs);

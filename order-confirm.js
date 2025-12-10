@@ -37,6 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
     totalDiv.innerHTML = `Total Paid: $${order.totalPaid.toFixed(2)}`;
     orderTotalEl.appendChild(totalDiv);
 
+     function saveOrderToLogs(order) {
+        let logs = JSON.parse(localStorage.getItem("systemLogs")) || [];
+
+        logs.push({
+            timestamp: new Date().toLocaleString(),
+            activity: `New Order Placed | Total: $${order.totalPaid.toFixed(2)} | Items: ${order.items.length}`
+        });
+
+        localStorage.setItem("systemLogs", JSON.stringify(logs));
+    }
+
+    function saveOrderToOrders(order) {
+        let allOrders = JSON.parse(localStorage.getItem("customerOrders")) || [];
+
+        let orderEntry = {
+            id: Date.now(),
+            timestamp: new Date().toLocaleString(),
+            items: order.items,
+            subtotal: order.subtotal,
+            discount: order.discount,
+            totalPaid: order.totalPaid
+        };
+
+        allOrders.push(orderEntry);
+        localStorage.setItem("customerOrders", JSON.stringify(allOrders));
+    }
+
+    saveOrderToLogs(order);
+    saveOrderToOrders(order);
+
     localStorage.removeItem("cartForConfirmation");
     localStorage.removeItem("cartTotal");
 
