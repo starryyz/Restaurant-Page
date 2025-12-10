@@ -197,6 +197,22 @@ h3{
     font-size: 12px;
     opacity: 0.7;
 }
+
+.deleteOrderBtn {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #AD8AE1;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: url("Images/2.png"), auto;
+    font-family: "Courier New", monospace;
+}
+
+.deleteOrderBtn:hover {
+    background-color: #cba4ff;
+    cursor: url("Images/1.png"), pointer;
+}
 .navButton {
     background: none;
     border: none;

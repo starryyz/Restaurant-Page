@@ -72,5 +72,13 @@ function displayOrders() {
     box.innerHTML = html;
 }
 
+function deleteOrder(orderId) {
+    let orders = JSON.parse(localStorage.getItem("customerOrders")) || [];
+    let updatedOrders = orders.filter(o => o.id !== orderId);
+
+    localStorage.setItem("customerOrders", JSON.stringify(updatedOrders));
+    displayOrders(); //calls back in the newly placed orders
+}
+
 setInterval(displayLogs, 3000);
 window.addEventListener("load", displayLogs);
