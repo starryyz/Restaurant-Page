@@ -65,6 +65,8 @@ function displayOrders() {
                 <div><strong>Subtotal:</strong> $${order.subtotal.toFixed(2)}</div>
                 <div><strong>Discount:</strong> $${order.discount.toFixed(2)}</div>
                 <div><strong>Total Paid:</strong> $${order.totalPaid.toFixed(2)}</div>
+
+                <button class="deleteOrderBtn" onclick="deleteOrder(${order.id})">Delete Order</button>
             </div>
         `;
     });
