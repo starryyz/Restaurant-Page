@@ -222,6 +222,9 @@ input.invalid {
     gap: 15px;
     margin-bottom: 20px;
 }
+.payment-icons :hover{
+    cursor: url("Images/1.png"), pointer;
+}
 
 .payment-option {
     padding: 10px;
