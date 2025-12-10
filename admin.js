@@ -31,7 +31,7 @@ function displayLogs() {
         allHTML += entry;
     });
 
-    allBox.innerHTML = allHTML || "<p>No logs.</p>";
+    allBox.innerHTML = allHTML || "<p>No logs available.</p>";
 }
 
 function currentOrders() {
