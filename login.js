@@ -90,11 +90,8 @@ document.querySelector("#signupForm").addEventListener("submit", function(e) {
 
 
 
-//automatically shows the login/sign up page first
-if (!localStorage.getItem("loggedInUser") &&
-    !window.location.pathname.includes("login-signup.html")) {
-  window.location.href = "login-signup.html";
-}
+// This file is used on the login page (index.html). Removed automatic
+// redirect to "login-signup.html" which did not exist and caused a 404.
 
 function goToSignup() {
   document.getElementById("logincontainer").style.display = "none";
